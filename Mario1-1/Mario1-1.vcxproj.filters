@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameMain">
+      <UniqueIdentifier>{7a82e680-1e12-45e7-8a9a-29cc37c79046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BaseClass">
+      <UniqueIdentifier>{6d4bec94-5218-4dd4-98ad-e21b79ca8125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{9fdac373-56dc-48f6-afc6-dd81c850c53a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ManagerClass">
+      <UniqueIdentifier>{91149254-1701-4379-8f69-c41489c0ffed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{d510da77-e73b-4025-913d-b81c85ced2c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collider">
+      <UniqueIdentifier>{9857eb32-3525-447e-b76e-b66892fc0e1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\GameMain\Main.cpp">
+      <Filter>GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameMain\GameManager.cpp">
+      <Filter>GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BaseClass\SceneBase.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\TitleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\PlayScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Math\Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BaseClass\ObjectBase.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ManagerClass\ObjectManager.cpp">
+      <Filter>ManagerClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\DebugScene_Awata.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\DebugScene_Itou.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\DebugScene_Monda.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Collider\BoxCollider.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\GameMain\GameManagerh.h">
+      <Filter>GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseClass\SceneBase.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\TitleScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\PlayScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ManagerClass\ObjectManager.h">
+      <Filter>ManagerClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Math\Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseClass\ObjectBase.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\DebugScene_Awata.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\DebugScene_Itou.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\DebugScene_Monda.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collider\BoxCollider.h">
+      <Filter>Collider</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
