@@ -1,5 +1,6 @@
 #include "..\Scene\TitleScene.h"
 #include "..\Scene\PlayScene.h"
+#include "..\ManagerClass\ObjectManager.h"
 #include "..\Scene\DebugScene_Awata.h"
 #include "..\Scene\DebugScene_Itou.h"
 #include "..\Scene\DebugScene_Monda.h"
@@ -9,7 +10,9 @@ SceneBase::SceneBase(std::string type_)
 	: type(type_) {}
 
 //デストラクタ
-SceneBase::~SceneBase() {}
+SceneBase::~SceneBase() {
+	ObjectManager::getInstance()->ClearList();
+}
 
 template SceneBase* SceneBase::ChangeScene<TitleScene>();
 template SceneBase* SceneBase::ChangeScene<PlayScene>();
