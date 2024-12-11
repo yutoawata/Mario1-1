@@ -41,6 +41,8 @@ void ObjectManager::CollideObjects(ObjectBase& object_, int object_num) {
 
 bool ObjectManager::CheckCollision(const BoxCollider& collider_01, const BoxCollider& colliser_02) {
 	//§ì’†
+
+	return true;
 }
 
 //“o˜^ˆ—
