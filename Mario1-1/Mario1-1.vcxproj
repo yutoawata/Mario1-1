@@ -139,6 +139,7 @@
     <ClCompile Include="Source\GameMain\GameManager.cpp" />
     <ClCompile Include="Source\GameMain\Main.cpp" />
     <ClCompile Include="Source\ManagerClass\ObjectManager.cpp" />
+    <ClCompile Include="Source\Map\Map.cpp" />
     <ClCompile Include="Source\Math\Vector2.cpp" />
     <ClCompile Include="Source\Scene\DebugScene_Awata.cpp" />
     <ClCompile Include="Source\Scene\DebugScene_Itou.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Source\Collider\BoxCollider.h" />
     <ClInclude Include="Source\GameMain\GameManagerh.h" />
     <ClInclude Include="Source\ManagerClass\ObjectManager.h" />
+    <ClInclude Include="Source\Map\Map.h" />
     <ClInclude Include="Source\Math\Vector2.h" />
     <ClInclude Include="Source\Scene\DebugScene_Awata.h" />
     <ClInclude Include="Source\Scene\DebugScene_Itou.h" />

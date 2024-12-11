@@ -31,6 +31,9 @@
     <Filter Include="Collider">
       <UniqueIdentifier>{9857eb32-3525-447e-b76e-b66892fc0e1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{f8ce7246-d70a-4e30-bb1a-22ca241ef1e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\GameMain\Main.cpp">
@@ -69,6 +72,9 @@
     <ClCompile Include="Source\Collider\BoxCollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Map\Map.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameMain\GameManagerh.h">
@@ -103,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="Source\Collider\BoxCollider.h">
       <Filter>Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Map\Map.h">
+      <Filter>Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
