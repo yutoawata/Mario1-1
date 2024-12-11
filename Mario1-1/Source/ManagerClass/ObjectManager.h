@@ -25,7 +25,10 @@ public:
 	void Update();
 	//•`‰æˆ—
 	void Draw();
-	
+	//“–‚½‚è”»’èˆ—
+	void CollideObjects(ObjectBase& object_,int object_num);
+	bool CheckCollision(const BoxCollider& collider_01, const BoxCollider& colliser_02);
+
 	static ObjectManager* instance;
 	//ƒƒ“ƒo•Ï”
 private:

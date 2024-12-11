@@ -1,7 +1,8 @@
 #pragma once
 #include "..\Math\Vector2.h"
+#include "..\Collider\BoxCollider.h"
 
-class ObjectBase {
+class ObjectBase /*: public BoxCollider*/ {
 	//メンバ関数
 public:
 	//コンストラクタ
