@@ -25,50 +25,50 @@ float Vector2::Cross(Vector2 vec_01, Vector2 vec_02) {
 }
 
 //ÉTÉCÉYÇï‘Ç∑
-int Vector2::getSize() const {
+float Vector2::GetSize() const {
 	float vecX = static_cast<float>(x);
 	float vecY = static_cast<float>(y);
-	return static_cast<int>(sqrtf(vecX * vecX + vecY * vecY));
+	return sqrtf(vecX * vecX + vecY * vecY);
 }
 
 Vector2 Vector2::Normalized() const {
-	int size = getSize();
+	int size = GetSize();
 	return Vector2(x / size, y / size);
 }
 
-Vector2 Vector2::operator+(const Vector2& other) const {
-	return Vector2(x + other.x, y + other.y);
+Vector2 Vector2::operator+(const Vector2& other_) const {
+	return Vector2(x + other_.x, y + other_.y);
 }
 
-Vector2 Vector2::operator-(const Vector2& other) const {
-	return Vector2(x - other.x, y - other.y);
+Vector2 Vector2::operator-(const Vector2& other_) const {
+	return Vector2(x - other_.x, y - other_.y);
 }
 
-Vector2 Vector2::operator*(int value) const {
-	return Vector2(x * value, y * value);
+Vector2 Vector2::operator*(int value_) const {
+	return Vector2(x * value_, y * value_);
 }
 
-Vector2 Vector2::operator/(int value) const {
-	return Vector2(x / value, y / value);
+Vector2 Vector2::operator/(int value_) const {
+	return Vector2(x / value_, y / value_);
 }
 
-Vector2& Vector2::operator +=(const Vector2& other) {
-	x += other.x;
-	y += other.y;
+Vector2& Vector2::operator +=(const Vector2& other_) {
+	x += other_.x;
+	y += other_.y;
 	return *this;
 }
-Vector2& Vector2::operator -=(const Vector2& other) {
-	x -= other.x;
-	y -= other.y;
+Vector2& Vector2::operator -=(const Vector2& other_) {
+	x -= other_.x;
+	y -= other_.y;
 	return *this;
 }
 
-bool Vector2::operator ==(const Vector2& other) {
-	return (x == other.x && y == other.y);
+bool Vector2::operator ==(const Vector2& other_) {
+	return (x == other_.x && y == other_.y);
 }
 
-bool Vector2::operator !=(const Vector2& other) {
-	return (x != other.x || y != other.y);
+bool Vector2::operator !=(const Vector2& other_) {
+	return (x != other_.x || y != other_.y);
 }
 
 Vector2::operator VECTOR() {
