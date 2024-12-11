@@ -27,6 +27,22 @@ void ObjectManager::Draw() {
 	}
 }
 
+void ObjectManager::CollideObjects(ObjectBase& object_, int object_num) {
+
+	//§ì’†
+	/*for (int i = object_num + 1; i < objectList.size(); i++) {
+		if (CheckCollision(object_, *objectList[i])) {
+			if (object_.IsTrigger() || objectList[i]->IsTrigger()) {
+				object_.OnTrigger(objectList[i])
+			}
+		}
+	}*/
+}
+
+bool ObjectManager::CheckCollision(const BoxCollider& collider_01, const BoxCollider& colliser_02) {
+	//§ì’†
+}
+
 //“o˜^ˆ—
 void ObjectManager::AddList(ObjectBase* object_) {
 	objectList.emplace_back(object_);

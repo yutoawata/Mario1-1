@@ -3,7 +3,7 @@
 
 //コンストラクタ
 ObjectBase::ObjectBase(Vector2 position_, int image_handle)
-	: position(position_), imageHandle(image_handle), isVisible(true) {
+	:/*BoxCollider(image_handle) ,*/position(position_), imageHandle(image_handle), isVisible(true) {
 	ObjectManager::AddList(this);
 }
 
