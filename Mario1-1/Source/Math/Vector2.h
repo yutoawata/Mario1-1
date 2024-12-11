@@ -20,26 +20,26 @@ struct Vector2 {
 	//単位ベクトルを返す
 	Vector2 Normalized() const;
 	//サイズを返す
-	int getSize() const;
+	float GetSize() const;
 
 	//演算子オーバーロード
 
 	//Vectorクラス同士の加算
-	Vector2 operator +(const Vector2& other) const;
+	Vector2 operator +(const Vector2& other_) const;
 	//Vectorクラス同士の減算
-	Vector2 operator -(const Vector2& other) const;
+	Vector2 operator -(const Vector2& other_) const;
 	//各要素への乗算
-	Vector2 operator *(int value) const;
+	Vector2 operator *(int value_) const;
 	//各要素への除算
-	Vector2 operator /(int value) const;
+	Vector2 operator /(int value_) const;
 	//Vectorクラス同士の加算
-	Vector2& operator +=(const Vector2& other);
+	Vector2& operator +=(const Vector2& other_);
 	//Vectorクラス同士の減算
-	Vector2& operator -=(const Vector2& other);
+	Vector2& operator -=(const Vector2& other_);
 	//Vectorクラス同士の等価比較
-	bool operator ==(const Vector2& other);
+	bool operator ==(const Vector2& other_);
 	//Vectorクラス同士の不等価比較
-	bool operator !=(const Vector2& other);
+	bool operator !=(const Vector2& other_);
 	//DXライブラリのベクトルクラスへのキャスト
 	operator VECTOR();
 
