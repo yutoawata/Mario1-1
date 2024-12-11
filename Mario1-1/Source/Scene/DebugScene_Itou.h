@@ -1,5 +1,6 @@
 #pragma once
 #include "..\BaseClass\SceneBase.h"
+#include "..\Map\Map.h"
 
 class DebugScene_Itou : public SceneBase {
 	//ƒƒ“ƒoŠÖ”
@@ -15,4 +16,6 @@ public:
 
 	//ƒƒ“ƒo•Ï”
 private:
+	Map *map = new Map();
+	
 };
