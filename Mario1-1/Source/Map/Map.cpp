@@ -29,7 +29,7 @@ void Map::ViewDataDebug()
 	{
 		for (int x = 0; x < MAP_SIZE_X; ++x)
 		{
-			DrawFormatString(x * BLOCK_SIZE, y * BLOCK_SIZE, GetColor(255, 255, 255), "%d",mapData[x*y]);
+			DrawFormatString(x * BLOCK_SIZE, y * BLOCK_SIZE, GetColor(255, 255, 255), "%d",mapData[x + y * MAP_SIZE_X]);
 		}
 	}
 }
