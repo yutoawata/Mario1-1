@@ -17,5 +17,4 @@ public:
 	//ƒƒ“ƒo•Ï”
 private:
 	Map *map = new Map();
-	
 };
