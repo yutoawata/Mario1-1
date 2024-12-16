@@ -7,7 +7,7 @@ Map::Map()
 
 Map::~Map()
 {
-
+	delete[] mapData;
 }
 
 void Map::LoadMapData()
