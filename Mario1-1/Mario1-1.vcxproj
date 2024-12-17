@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Source\BaseClass\ObjectBase.cpp" />
     <ClCompile Include="Source\BaseClass\SceneBase.cpp" />
+    <ClCompile Include="Source\Block\Block.cpp" />
     <ClCompile Include="Source\Collider\BoxCollider.cpp" />
     <ClCompile Include="Source\GameMain\GameManager.cpp" />
     <ClCompile Include="Source\GameMain\Main.cpp" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\ObjectBase.h" />
     <ClInclude Include="Source\BaseClass\SceneBase.h" />
+    <ClInclude Include="Source\Block\Block.h" />
     <ClInclude Include="Source\Collider\BoxCollider.h" />
     <ClInclude Include="Source\GameMain\GameManagerh.h" />
     <ClInclude Include="Source\ManagerClass\ObjectManager.h" />
