@@ -34,6 +34,9 @@
     <Filter Include="Map">
       <UniqueIdentifier>{f8ce7246-d70a-4e30-bb1a-22ca241ef1e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Block">
+      <UniqueIdentifier>{536805e9-0c46-45a6-a63c-5107d7ad987b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\GameMain\Main.cpp">
@@ -75,6 +78,9 @@
     <ClCompile Include="Source\Map\Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Block\Block.cpp">
+      <Filter>Block</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameMain\GameManagerh.h">
@@ -112,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="Source\Map\Map.h">
       <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Block\Block.h">
+      <Filter>Block</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
