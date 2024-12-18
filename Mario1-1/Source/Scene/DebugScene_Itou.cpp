@@ -11,6 +11,7 @@ DebugScene_Itou::~DebugScene_Itou() {}
 //更新処理
 SceneBase* DebugScene_Itou::Update() {
 
+	map->MovePositionDebug();
 
 	//ゲーム内のオブジェクトの更新処理
 	ObjectManager::getInstance()->Update();
