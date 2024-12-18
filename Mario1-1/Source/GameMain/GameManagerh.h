@@ -15,7 +15,7 @@ public:
 	void ExcuteGameLoop();
 
 	//メンバ定数
-public:
+
 	//ゲームウィンドウ設定定数--------------
 	static const int SCREEN_WIDTH = 512;	//ゲームウィンドウの横幅
 	static const int SCREEN_HEIGHT = 480;	//ゲームウィンドウの縦幅

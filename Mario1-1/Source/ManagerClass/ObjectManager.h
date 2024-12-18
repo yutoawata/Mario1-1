@@ -20,6 +20,8 @@ public:
 	static void AddList(ObjectBase* object_);
 	static void ClearList();
 	static void DeleteInstance();
+	
+	static bool CheckCollision(const BoxCollider& collider_01, const BoxCollider& collider_02);
 
 	//XVˆ—
 	void Update();
@@ -27,7 +29,7 @@ public:
 	void Draw();
 	//“–‚½‚è”»’èˆ—
 	void CollideObjects(ObjectBase& object_,int object_num);
-	bool CheckCollision(const BoxCollider& collider_01, const BoxCollider& colliser_02);
+	CollideResult CreateResult(const ObjectBase& collider_01, const ObjectBase& collider_02);
 
 	static ObjectManager* instance;
 	//ƒƒ“ƒo•Ï”

@@ -75,6 +75,9 @@
     <ClCompile Include="Source\Map\Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Collider\CollideResult.cpp">
+      <Filter>Collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameMain\GameManagerh.h">
@@ -112,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="Source\Map\Map.h">
       <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Collider\CollideResult.h">
+      <Filter>Collider</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

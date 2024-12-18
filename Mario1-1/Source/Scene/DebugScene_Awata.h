@@ -3,12 +3,30 @@
 #include "..\BaseClass\ObjectBase.h"
 
 class DebugObject : public ObjectBase {
+	//メンバ関数
 public:
-	DebugObject();
+	//コンストラクタ
+	DebugObject(std::vector<int> handle_);
+	//デストラクタ
 	~DebugObject();
 
 	void Update() override;
 	void Draw() override;
+};
+
+class DebugObject02 : public ObjectBase {
+	//メンバ関数
+public:
+	//コンストラクタ
+	DebugObject02(std::vector<int> handle_);
+	//デストラクタ
+	~DebugObject02();
+
+	void Update() override;
+	void Draw() override;
+
+
+	void OnCollision(const CollideResult& other_) override;
 };
 
 class DebugScene_Awata : public SceneBase {
