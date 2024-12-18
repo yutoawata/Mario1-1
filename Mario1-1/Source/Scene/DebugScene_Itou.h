@@ -3,18 +3,18 @@
 #include "..\Map\Map.h"
 
 class DebugScene_Itou : public SceneBase {
-	//ƒƒ“ƒoŠÖ”
+	//ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Öï¿½
 public:
-	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	//ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 	DebugScene_Itou();
-	//ƒfƒXƒgƒ‰ƒNƒ^
+	//ï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 	~DebugScene_Itou();
 
 	SceneBase* Update() override;
 
 	void Draw() override;
 
-	//ƒƒ“ƒo•Ï”
+	//ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Ïï¿½
 private:
 	Map *map = new Map();
 
