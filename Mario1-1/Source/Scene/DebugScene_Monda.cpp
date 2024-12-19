@@ -12,7 +12,7 @@ DebugScene_Monda::~DebugScene_Monda() {}
 SceneBase* DebugScene_Monda::Update() {
 	
 	//ゲーム内のオブジェクトの更新処理
-	ObjectManager::getInstance()->Update();
+	ObjectManager::GetInstance()->Update();
 
 	return this;
 }
@@ -21,5 +21,5 @@ SceneBase* DebugScene_Monda::Update() {
 void DebugScene_Monda::Draw() {
 	DrawType();
 	//ゲーム内のオブジェクトの描画処理
-	ObjectManager::getInstance()->Draw();
+	ObjectManager::GetInstance()->Draw();
 }

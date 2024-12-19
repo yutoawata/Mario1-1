@@ -4,12 +4,12 @@
 //コンストラクタ
 ObjectBase::ObjectBase(std::vector<int> graph_handles, Vector2 position_, std::string tag_)
 	:BoxCollider(position, graph_handles[0], tag_), graphHandles(graph_handles), position(position_), isVisible(true) {
-	ObjectManager::AddList(this);
+	ObjectManager::GetInstance()->AddList(this);
 }
 
 ObjectBase::ObjectBase(Vector2 position_, std::string tag_, int width_, int height_)
 	:BoxCollider(position, width_, height_, tag_), position(position_), isVisible(true) {
-	ObjectManager::AddList(this);
+	ObjectManager::GetInstance()->AddList(this);
 }
 
 //デストラクタ

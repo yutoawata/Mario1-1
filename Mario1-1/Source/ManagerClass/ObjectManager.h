@@ -14,7 +14,7 @@ private:
 
 	//アクセサ
 public:
-	static ObjectManager* getInstance() { return instance; }
+	static ObjectManager* GetInstance() { return instance; }
 
 	static void DeleteInstance();
 	

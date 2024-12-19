@@ -1,8 +1,10 @@
 #include "DebugScene_Awata.h"
 #include "..\ManagerClass\ObjectManager.h"
 
-DebugObject::DebugObject(std::vector<int> handle_)
-	: ObjectBase(Vector2(40, 40), "test01",30, 30) {}
+DebugObject::DebugObject(std::vector<int> handle_,int* hadles_)
+	: ObjectBase(Vector2(40, 40), "test01",30, 30) {
+	
+}
 
 DebugObject::~DebugObject() {}
 
@@ -52,7 +54,7 @@ DebugScene_Awata::~DebugScene_Awata() {}
 SceneBase* DebugScene_Awata::Update() {
 	
 	//ゲーム内のオブジェクトの更新処理
-	ObjectManager::getInstance()->Update();
+	ObjectManager::GetInstance()->Update();
 
 	return this;
 }
@@ -62,5 +64,5 @@ void DebugScene_Awata::Draw() {
 	//シーンの種類を表示
 	DrawType();
 	//ゲーム内のオブジェクトの描画処理
-	ObjectManager::getInstance()->Draw();
+	ObjectManager::GetInstance()->Draw();
 }

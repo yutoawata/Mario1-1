@@ -2,8 +2,6 @@
 
 ObjectManager* ObjectManager::instance = new ObjectManager();
 
-std::vector<ObjectBase*> ObjectManager::objectList = std::vector<ObjectBase*>();
-
 ObjectManager::ObjectManager() {}
 
 //デストラクタ
