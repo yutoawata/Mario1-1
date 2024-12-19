@@ -1,9 +1,8 @@
 #include "DebugScene_Awata.h"
 #include "..\ManagerClass\ObjectManager.h"
 
-DebugObject::DebugObject(std::vector<int> handle_,int* hadles_)
+DebugObject::DebugObject(int* handles_)
 	: ObjectBase(Vector2(40, 40), "test01",30, 30) {
-	
 }
 
 DebugObject::~DebugObject() {}

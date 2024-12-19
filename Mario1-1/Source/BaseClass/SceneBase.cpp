@@ -11,7 +11,7 @@ SceneBase::SceneBase(std::string type_)
 
 //デストラクタ
 SceneBase::~SceneBase() {
-	ObjectManager::getInstance()->ClearList();
+	ObjectManager::GetInstance()->ClearList();
 }
 
 template SceneBase* SceneBase::ChangeScene<TitleScene>();

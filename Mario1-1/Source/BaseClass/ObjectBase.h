@@ -10,7 +10,7 @@ class ObjectBase : public BoxCollider {
 	//メンバ関数
 public:
 	//コンストラクタ
-	ObjectBase(std::vector<int> graph_handles, Vector2 position_, std::string tag_);
+	ObjectBase(Vector2 position_, int image_handle, std::string tag_ = "");
 	ObjectBase(Vector2 position_, std::string tag_, int width, int height);
 	//デストラクタ
 	virtual ~ObjectBase();
@@ -29,7 +29,6 @@ public:
 
 	//メンバ変数
 protected:
-	std::vector<int> graphHandles;//画像素材のハンドル
 	Vector2 position;	//オブジェクトの原点座標(左上)
 	bool isVisible;		//描画フラグ
 };
