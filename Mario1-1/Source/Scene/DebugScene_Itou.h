@@ -3,19 +3,18 @@
 #include "..\Map\Map.h"
 
 class DebugScene_Itou : public SceneBase {
-	//�����o�֐�
 public:
-	//�R���X�g���N�^
-	DebugScene_Itou();
-	//�f�X�g���N�^
-	~DebugScene_Itou();
+	// メンバ関数
+
+	DebugScene_Itou(); // コンストラクタ
+	~DebugScene_Itou(); // デストラクタ
 
 	SceneBase* Update() override;
 
 	void Draw() override;
 
-	//�����o�ϐ�
 private:
+	// メンバ変数
 	Map *map = new Map();
 
 };

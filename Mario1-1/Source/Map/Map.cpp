@@ -3,6 +3,7 @@
 Map::Map()
 {
 	LoadMapData();
+
 }
 
 Map::~Map()
