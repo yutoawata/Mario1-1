@@ -19,7 +19,7 @@ GameManger::GameManger() {
 
 //デストラクタ
 GameManger::~GameManger(){
-	ObjectManager::getInstance()->DeleteInstance();
+	ObjectManager::GetInstance()->DeleteInstance();
 	delete currentScene;
 }
 

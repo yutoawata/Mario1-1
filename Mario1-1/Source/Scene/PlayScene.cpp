@@ -17,7 +17,7 @@ SceneBase* PlayScene::Update() {
 		return ChangeScene<TitleScene>();
 	}
 
-	ObjectManager::getInstance()->Update();
+	ObjectManager::GetInstance()->Update();
 
 	return this;
 }
@@ -25,5 +25,5 @@ SceneBase* PlayScene::Update() {
 //•`‰æˆ—
 void PlayScene::Draw() {
 	DrawType();
-	ObjectManager::getInstance()->Draw();
+	ObjectManager::GetInstance()->Draw();
 }
