@@ -6,15 +6,16 @@ class DebugObject : public ObjectBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	DebugObject(std::vector<int> handle_, int* handles_);
+	DebugObject(int* handles_);
 	//デストラクタ
 	~DebugObject();
 
-	void Update() override;
+	void Update() override {
+		int i = 0;
+	}
 	void Draw() override;
 
 private:
-	int handle[];
 
 };
 

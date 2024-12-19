@@ -2,8 +2,8 @@
 #include "..\ManagerClass\ObjectManager.h"
 
 //コンストラクタ
-ObjectBase::ObjectBase(std::vector<int> graph_handles, Vector2 position_, std::string tag_)
-	:BoxCollider(position, graph_handles[0], tag_), graphHandles(graph_handles), position(position_), isVisible(true) {
+ObjectBase::ObjectBase(Vector2 position_, int image_handle, std::string tag_)
+	:BoxCollider(position, image_handle, tag_), position(position_), isVisible(true) {
 	ObjectManager::GetInstance()->AddList(this);
 }
 
