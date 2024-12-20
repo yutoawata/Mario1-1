@@ -7,31 +7,30 @@
 class CollideResult;
 
 class ObjectBase : public BoxCollider {
-	//�����o�֐�
+	//
 public:
-	//�R���X�g���N�^
+	//コンストラクタ
 	ObjectBase(Vector2 position_, int image_handle, std::string tag_ = "");
 	ObjectBase(Vector2 position_, std::string tag_, int width, int height);
-	//�f�X�g���N�^
+	//デストラクタ
 	virtual ~ObjectBase();
 
-	//�A�N�Z�T
+	//アクセサ
 
 	Vector2 GetPosition() const { return position; }
 	bool IsVisible() const { return isVisible; }
 	bool IsActive() const { return isActive; }
 
-	//�X�V����
+	//更新処理
 	virtual void Update() = 0;
-	//�`�揈��
+	//描画処理
 	virtual void Draw() = 0;
-	//�Փ˔��莞�̏���
+	//衝突時の処理
 	virtual void OnCollision(const CollideResult& result_);
 
-	//�����o�ϐ�
+	//メンバ変数
 protected:
-	Vector2 position;	//�I�u�W�F�N�g�̌��_���W(����)
-	bool isVisible;		//�`��t���O
-	bool isActive;
-	bool isActive;		//�������t���O
+	Vector2 position;	//原点座標(矩形の左上)
+	bool isVisible;		//描画フラグ
+	bool isActive;		//活性化フラグ
 };
