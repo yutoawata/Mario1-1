@@ -12,5 +12,5 @@ public:
 private:
 
 	// ƒƒ“ƒo•Ï”
-	int imageHandle;
+	int imageHandle; // ‰æ‘œƒnƒ“ƒhƒ‹
 };
