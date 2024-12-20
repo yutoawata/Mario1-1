@@ -5,9 +5,8 @@ class BreakBlock : public BlockBase
 {
 public:
 	// メンバ関数
-	BreakBlock(); // コンストラクタ
+	BreakBlock(Vector2 position_, int handle_); // コンストラクタ
 	~BreakBlock(); // デストラクタ
-	void Update() override; // 更新処理
 	void Draw() override; // 描画処理
 	void OnCollision(const CollideResult& result_) override; // 衝突時の処理
 

@@ -17,5 +17,5 @@ void BlockBase::Update()
 
 void BlockBase::Move()
 {
-
+	// ƒXƒNƒ[ƒ‹ˆ—
 }
