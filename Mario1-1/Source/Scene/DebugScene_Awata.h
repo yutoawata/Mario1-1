@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include "..\BaseClass\SceneBase.h"
 #include "..\BaseClass\ObjectBase.h"
 
@@ -15,15 +16,17 @@ public:
 	}
 	void Draw() override;
 
-private:
+	int GetValue() { return i; }
 
+private:
+	int i = 0;
 };
 
 class DebugObject02 : public ObjectBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	DebugObject02(std::vector<int> handle_);
+	DebugObject02(std::function<int(void)> add_func);
 	//デストラクタ
 	~DebugObject02();
 
@@ -32,6 +35,8 @@ public:
 
 
 	void OnCollision(const CollideResult& other_) override;
+
+	std::function<int(void)> addFunc;
 };
 
 class DebugScene_Awata : public SceneBase {
