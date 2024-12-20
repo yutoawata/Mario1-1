@@ -19,6 +19,7 @@ public:
 
 	Vector2 GetPosition() const { return position; }
 	bool IsVisible() const { return isVisible; }
+	bool IsActive() const { return isActive; }
 
 	//更新処理
 	virtual void Update() = 0;
@@ -32,4 +33,5 @@ protected:
 	std::vector<int> graphHandles;//画像素材のハンドル
 	Vector2 position;	//オブジェクトの原点座標(左上)
 	bool isVisible;		//描画フラグ
+	bool isActive;		//活性化フラグ
 };
