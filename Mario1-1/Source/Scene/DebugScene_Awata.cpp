@@ -8,8 +8,8 @@ DebugObject::DebugObject(int* handles_)
 DebugObject::~DebugObject() {}
 
 //コンストラクタ
-DebugObject02::DebugObject02(std::vector<int> handle_)
-	: ObjectBase(Vector2(80, 80), "Block", 30, 30) {}
+DebugObject02::DebugObject02(std::function<int(void)> add_func)
+	: ObjectBase(Vector2(80, 80), "Block", 30, 30), addFunc(add_func) {}
 //デストラクタ
 DebugObject02::~DebugObject02() {}
 
@@ -20,8 +20,9 @@ void DebugObject02::Draw() {}
 DebugScene_Awata::DebugScene_Awata()
 	: SceneBase("DebugScene : Awata") {
 	std::vector<int> handle = { 1 };
-	DebugObject* object = new DebugObject(handle);
-	DebugObject02* object02 = new DebugObject02(handle);
+	DebugObject* object = new DebugObject(&handle[0]);
+	std::function<int(void)> func = std::bind(&DebugObject::GetValue, object);
+	DebugObject02* object02 = new DebugObject02(func);
 }
 
 void DebugObject::Update() {
@@ -40,10 +41,13 @@ void DebugObject::Update() {
 	}
 }
 
-void DebugObject::Draw() {}
+void DebugObject::Draw() {
+	DrawFormatString(200, 200, GetColor(255, 255, 255), "%d", i);
+}
 
 void DebugObject02::OnCollision(const CollideResult& other_) {
 	DrawCircle(100, 100, 20, GetColor(0, 0, 255), TRUE);
+	
 }
 
 //デストラクタ
