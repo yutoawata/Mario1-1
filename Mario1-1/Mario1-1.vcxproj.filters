@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source\Block\Block.cpp">
-      <Filter>Block</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Collider\BoxCollider.cpp">
       <Filter>Collider</Filter>
     </ClCompile>
@@ -46,11 +43,17 @@
     <ClCompile Include="Source\Scene\TitleScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Block\BreakBlock.cpp">
+      <Filter>Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Block\NormalBlock.cpp">
+      <Filter>Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BaseClass\BlockBase.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Block\Block.h">
-      <Filter>Block</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Collider\BoxCollider.h">
       <Filter>Collider</Filter>
     </ClInclude>
@@ -89,6 +92,15 @@
     </ClInclude>
     <ClInclude Include="Source\Scene\TitleScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Block\BreakBlock.h">
+      <Filter>Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Block\NormalBlock.h">
+      <Filter>Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseClass\BlockBase.h">
+      <Filter>BaseClass</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
