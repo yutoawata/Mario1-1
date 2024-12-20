@@ -31,4 +31,5 @@ public:
 protected:
 	Vector2 position;	//オブジェクトの原点座標(左上)
 	bool isVisible;		//描画フラグ
+	bool isActive;
 };
