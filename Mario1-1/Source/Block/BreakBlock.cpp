@@ -17,5 +17,8 @@ void BreakBlock::Draw()
 
 void BreakBlock::OnCollision(const CollideResult& result_)
 {
-	// ÚG‚Ìˆ—
+	if (result_.GetCollideObject().GetTag() == "Player" && result_.IsBottomCollide())
+	{
+		// Á‚¦‚éˆ—
+	}
 }
