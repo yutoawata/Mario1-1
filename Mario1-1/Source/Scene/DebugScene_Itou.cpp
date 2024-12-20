@@ -14,7 +14,7 @@ SceneBase* DebugScene_Itou::Update() {
 	map->MovePositionDebug();
 
 	//ゲーム内のオブジェクトの更新処理
-	ObjectManager::getInstance()->Update();
+	ObjectManager::GetInstance()->Update();
 
 	return this;
 }
@@ -26,5 +26,5 @@ void DebugScene_Itou::Draw() {
 	map->ViewDataDebug();
 
 	//ゲーム内のオブジェクトの描画処理
-	ObjectManager::getInstance()->Draw();
+	ObjectManager::GetInstance()->Draw();
 }
