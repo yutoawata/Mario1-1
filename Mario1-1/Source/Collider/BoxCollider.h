@@ -15,7 +15,7 @@ public:
 	//アクセサ
 
 	//オブジェクトの判別タグを渡す
-	std::string GetTag() { return tag; }
+	std::string GetTag() const { return tag; }
 	//原点座標(左上)を渡す
 	Vector2 GetLeftUpPosition() const { return leftUpPosition; }
 	//右下の座標を渡す
