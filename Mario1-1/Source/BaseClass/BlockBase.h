@@ -14,6 +14,6 @@ private:
 	void Move(); // スクロール処理
 
 	// メンバ定数
-	const std::string TAG = "Block"; // ObjectBaseのtag(第三引数)に渡す
+	const std::string TAG = "Block"; // Object識別用のタグ
 
 };
