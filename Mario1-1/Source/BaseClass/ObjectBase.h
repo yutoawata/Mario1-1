@@ -7,29 +7,31 @@
 class CollideResult;
 
 class ObjectBase : public BoxCollider {
-	//ƒƒ“ƒoŠÖ”
+	//ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Öï¿½
 public:
-	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	//ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 	ObjectBase(Vector2 position_, int image_handle, std::string tag_ = "");
 	ObjectBase(Vector2 position_, std::string tag_, int width, int height);
-	//ƒfƒXƒgƒ‰ƒNƒ^
+	//ï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 	virtual ~ObjectBase();
 
-	//ƒAƒNƒZƒT
+	//ï¿½Aï¿½Nï¿½Zï¿½T
 
 	Vector2 GetPosition() const { return position; }
 	bool IsVisible() const { return isVisible; }
+	bool IsActive() const { return isActive; }
 
-	//XVˆ—
+	//ï¿½Xï¿½Vï¿½ï¿½ï¿½ï¿½
 	virtual void Update() = 0;
-	//•`‰æˆ—
+	//ï¿½`ï¿½æˆï¿½ï¿½
 	virtual void Draw() = 0;
-	//Õ“Ë”»’è‚Ìˆ—
+	//ï¿½Õ“Ë”ï¿½ï¿½èï¿½Ìï¿½ï¿½ï¿½
 	virtual void OnCollision(const CollideResult& result_);
 
-	//ƒƒ“ƒo•Ï”
+	//ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Ïï¿½
 protected:
-	Vector2 position;	//ƒIƒuƒWƒFƒNƒg‚ÌŒ´“_À•W(¶ã)
-	bool isVisible;		//•`‰æƒtƒ‰ƒO
+	Vector2 position;	//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŒï¿½ï¿½_ï¿½ï¿½ï¿½W(ï¿½ï¿½ï¿½ï¿½)
+	bool isVisible;		//ï¿½`ï¿½ï¿½tï¿½ï¿½ï¿½O
 	bool isActive;
+	bool isActive;		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O
 };
