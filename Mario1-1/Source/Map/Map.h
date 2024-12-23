@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "..\Item\ItemType.h"
 #include "..\\Math\\Vector2.h" // デバッグ用
 #include <stdio.h>
 #include <vector>
