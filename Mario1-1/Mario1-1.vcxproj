@@ -138,6 +138,7 @@
     <ClCompile Include="Source\BaseClass\ObjectBase.cpp" />
     <ClCompile Include="Source\BaseClass\SceneBase.cpp" />
     <ClCompile Include="Source\Block\BreakBlock.cpp" />
+    <ClCompile Include="Source\Block\BrickBlock.cpp" />
     <ClCompile Include="Source\Block\NormalBlock.cpp" />
     <ClCompile Include="Source\Collider\BoxCollider.cpp" />
     <ClCompile Include="Source\Collider\CollideResult.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Source\BaseClass\ObjectBase.h" />
     <ClInclude Include="Source\BaseClass\SceneBase.h" />
     <ClInclude Include="Source\Block\BreakBlock.h" />
+    <ClInclude Include="Source\Block\BrickBlock.h" />
     <ClInclude Include="Source\Block\NormalBlock.h" />
     <ClInclude Include="Source\Collider\BoxCollider.h" />
     <ClInclude Include="Source\Collider\CollideResult.h" />
