@@ -1,5 +1,6 @@
 #include "DebugScene_Awata.h"
 #include "..\ManagerClass\ObjectManager.h"
+#include "..\ManagerClass\FPSManager.h"
 
 DebugObject::DebugObject(int* handles_)
 	: ObjectBase(Vector2(40, 40), "test01",30, 30) {
@@ -39,9 +40,12 @@ void DebugObject::Update() {
 	if (CheckHitKey(KEY_INPUT_S)) {
 		position.y += 1;
 	}
+
+	
 }
 
 void DebugObject::Draw() {
+	
 	DrawFormatString(200, 200, GetColor(255, 255, 255), "%d", i);
 }
 
@@ -58,7 +62,7 @@ SceneBase* DebugScene_Awata::Update() {
 	
 	//ゲーム内のオブジェクトの更新処理
 	ObjectManager::GetInstance()->Update();
-
+	timer += FPSManager::GetInstance()->GetDeltaTime();
 	return this;
 }
 
@@ -68,4 +72,5 @@ void DebugScene_Awata::Draw() {
 	DrawType();
 	//ゲーム内のオブジェクトの描画処理
 	ObjectManager::GetInstance()->Draw();
+	DrawFormatString(200, 0, GetColor(255, 255, 255), "%f", timer);
 }

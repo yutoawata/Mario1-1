@@ -52,6 +52,9 @@
     <ClCompile Include="Source\BaseClass\BlockBase.cpp">
       <Filter>BaseClass</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ManagerClass\FPSManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Collider\BoxCollider.h">
@@ -101,6 +104,9 @@
     </ClInclude>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
       <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ManagerClass\FPSManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
