@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\BaseClass\BlockBase.cpp" />
+    <ClCompile Include="Source\BaseClass\ItemBlockBase.cpp" />
     <ClCompile Include="Source\BaseClass\ObjectBase.cpp" />
     <ClCompile Include="Source\BaseClass\SceneBase.cpp" />
     <ClCompile Include="Source\Block\BreakBlock.cpp" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h" />
+    <ClInclude Include="Source\BaseClass\ItemBlockBase.h" />
     <ClInclude Include="Source\BaseClass\ObjectBase.h" />
     <ClInclude Include="Source\BaseClass\SceneBase.h" />
     <ClInclude Include="Source\Block\BreakBlock.h" />
@@ -160,6 +162,7 @@
     <ClInclude Include="Source\Collider\BoxCollider.h" />
     <ClInclude Include="Source\Collider\CollideResult.h" />
     <ClInclude Include="Source\GameMain\GameManagerh.h" />
+    <ClInclude Include="Source\Item\ItemType.h" />
     <ClInclude Include="Source\ManagerClass\ObjectManager.h" />
     <ClInclude Include="Source\Map\Map.h" />
     <ClInclude Include="Source\Math\Vector2.h" />
