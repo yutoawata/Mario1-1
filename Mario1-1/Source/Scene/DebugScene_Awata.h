@@ -11,9 +11,7 @@ public:
 	//デストラクタ
 	~DebugObject();
 
-	void Update() override {
-		int i = 0;
-	}
+	void Update() override;
 	void Draw() override;
 
 	int GetValue() { return i; }
