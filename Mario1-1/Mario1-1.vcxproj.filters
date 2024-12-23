@@ -54,6 +54,11 @@
     </ClCompile>
     <ClCompile Include="Source\ManagerClass\FPSManager.cpp">
       <Filter>Manager</Filter>
+    <ClCompile Include="Source\BaseClass\ItemBlockBase.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Block\BrickBlock.cpp">
+      <Filter>Block</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +112,14 @@
     </ClInclude>
     <ClInclude Include="Source\ManagerClass\FPSManager.h">
       <Filter>Manager</Filter>
+    <ClInclude Include="Source\Item\ItemType.h">
+      <Filter>Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseClass\ItemBlockBase.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Block\BrickBlock.h">
+      <Filter>Block</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +146,9 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{f5c5ea05-6765-4912-9f99-ea9d42e39d4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Item">
+      <UniqueIdentifier>{0d8fe689-edfa-4a56-ad69-76c912d53f96}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
