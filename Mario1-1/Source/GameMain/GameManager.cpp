@@ -1,5 +1,6 @@
 #include "GameManagerh.h"
 #include "..\ManagerClass\ObjectManager.h"
+#include "..\ManagerClass\FPSManager.h"
 
 const int SCREEN_WIDTH = 1920;	//ゲームウィンドウの横幅
 const int SCREEN_HEIGHT = 1080;	//ゲームウィンドウの縦幅
@@ -38,7 +39,9 @@ void GameManger::ExcuteGameLoop() {
 
 		currentScene = currentScene->Update();
 		currentScene->Draw();
+		FPSManager::GetInstance()->Update();
 
 		ScreenFlip();
+		FPSManager::GetInstance()->Wait();
 	}
 }

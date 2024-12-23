@@ -53,4 +53,5 @@ public:
 
 	//ƒƒ“ƒo•Ï”
 private:
+	float timer = 0.0f;
 };
