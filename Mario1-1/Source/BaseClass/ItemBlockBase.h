@@ -15,6 +15,8 @@ private:
 	// メンバ関数
 	void CreateItem(); // アイテムの生成
 
+
+protected:
 	// メンバ変数
 
 	ItemType itemType; // アイテムの種類の格納
