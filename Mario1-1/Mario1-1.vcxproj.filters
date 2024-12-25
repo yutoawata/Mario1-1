@@ -61,6 +61,9 @@
     <ClCompile Include="Source\GameMain\Main.cpp">
       <Filter>GameMain</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mario\Mario.cpp">
+      <Filter>Mario</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
@@ -123,6 +126,9 @@
     <ClInclude Include="Source\Item\ItemType.h">
       <Filter>Item</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mario\Mario.h">
+      <Filter>Mario</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BaseClass">
@@ -151,6 +157,9 @@
     </Filter>
     <Filter Include="Item">
       <UniqueIdentifier>{bf9bbbac-aa97-49a0-9cc5-499d2ee5122d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mario">
+      <UniqueIdentifier>{70e45349-d9ac-4acf-96e7-462f9a43a9df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
