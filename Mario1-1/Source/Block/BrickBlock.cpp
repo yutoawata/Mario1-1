@@ -1,7 +1,7 @@
 #include "BrickBlock.h"
 
 BrickBlock::BrickBlock(int* handle_, Vector2 position_, ItemType item_type, int item_value) 
-	: ItemBlockBase(handle_,position_,item_type,item_value),imageHandles(handle_),count(0),timer(0.0f)
+	: ItemBlockBase(handle_,position_,item_type,item_value),imageHandles(handle_)
 {
 	
 }
