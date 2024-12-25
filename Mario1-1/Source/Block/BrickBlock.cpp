@@ -1,7 +1,7 @@
 #include "BrickBlock.h"
 
 BrickBlock::BrickBlock(int* handle_, Vector2 position_, ItemType item_type, int item_value) 
-	: ItemBlockBase(handle_,position_,item_type,item_value),imageHandles(handle_)
+	: ItemBlockBase(handle_,position_,item_type,item_value),imageHandles(handle_),count(0),timer(0.0f)
 {
 	
 }
@@ -13,10 +13,17 @@ BrickBlock::~BrickBlock()
 
 void BrickBlock::Update()
 {
-	
+
 }
 
 void BrickBlock::Draw()
 {
-	DrawGraph(position.x, position.y, imageHandles[handleID], TRUE);
+	if(itemValue <= 0)
+	{
+		DrawGraph(position.x, position.y, imageHandles[1], TRUE);
+	}
+	else
+	{
+		DrawGraph(position.x, position.y, imageHandles[0], TRUE);
+	}
 }
