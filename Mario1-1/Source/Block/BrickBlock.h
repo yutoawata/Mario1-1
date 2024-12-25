@@ -1,5 +1,6 @@
 #pragma once
 #include "..\BaseClass\\ItemBlockBase.h"
+#include "..\ManagerClass\FPSManager.h"
 
 class BrickBlock : public ItemBlockBase
 {
@@ -17,8 +18,5 @@ private:
 	static const int HANDLE_VALUE = 2; // 画像の枚数
 
 	// メンバ変数
-	
 	int* imageHandles; // 画像ハンドルの保存変数
-	int handleID; // 描画する画像ハンドル番号
-    float timer; // 画像切り替えのタイマー
 };

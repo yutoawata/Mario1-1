@@ -11,7 +11,6 @@ DebugScene_Itou::~DebugScene_Itou() {}
 //更新処理
 SceneBase* DebugScene_Itou::Update() {
 
-	map->MovePositionDebug();
 
 	//ゲーム内のオブジェクトの更新処理
 	ObjectManager::GetInstance()->Update();
@@ -22,8 +21,6 @@ SceneBase* DebugScene_Itou::Update() {
 //描画処理
 void DebugScene_Itou::Draw() {
 	DrawType();
-
-	map->ViewDataDebug();
 
 	//ゲーム内のオブジェクトの描画処理
 	ObjectManager::GetInstance()->Draw();

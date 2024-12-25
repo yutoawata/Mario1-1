@@ -13,10 +13,17 @@ BrickBlock::~BrickBlock()
 
 void BrickBlock::Update()
 {
-	
+
 }
 
 void BrickBlock::Draw()
 {
-	DrawGraph(position.x, position.y, imageHandles[handleID], TRUE);
+	if(itemValue <= 0)
+	{
+		DrawGraph(position.x, position.y, imageHandles[1], TRUE);
+	}
+	else
+	{
+		DrawGraph(position.x, position.y, imageHandles[0], TRUE);
+	}
 }
