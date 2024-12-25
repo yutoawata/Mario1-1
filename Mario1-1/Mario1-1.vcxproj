@@ -145,6 +145,7 @@
     <ClCompile Include="Source\GameMain\GameManager.cpp" />
     <ClCompile Include="Source\GameMain\Main.cpp" />
     <ClCompile Include="Source\ManagerClass\FPSManager.cpp" />
+    <ClCompile Include="Source\ManagerClass\ImageManager.cpp" />
     <ClCompile Include="Source\ManagerClass\ObjectManager.cpp" />
     <ClCompile Include="Source\Map\Map.cpp" />
     <ClCompile Include="Source\Mario\Mario.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="Source\GameMain\GameManagerh.h" />
     <ClInclude Include="Source\Item\ItemType.h" />
     <ClInclude Include="Source\ManagerClass\FPSManager.h" />
+    <ClInclude Include="Source\ManagerClass\ImageManager.h" />
     <ClInclude Include="Source\ManagerClass\ObjectManager.h" />
     <ClInclude Include="Source\Map\Map.h" />
     <ClInclude Include="Source\Mario\Mario.h" />
