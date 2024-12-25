@@ -15,8 +15,8 @@ public:
 
 private:
 
-	int debughandle[4]
+	int debughandle[4];
 
-	BrickBlock* brickblock = new BrickBlock()
+	BrickBlock* brickblock = new BrickBlock();
 
 };
