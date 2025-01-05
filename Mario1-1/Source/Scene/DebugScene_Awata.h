@@ -2,29 +2,14 @@
 #include <functional>
 #include "..\BaseClass\SceneBase.h"
 #include "..\BaseClass\ObjectBase.h"
-
-class DebugObject : public ObjectBase {
-	//メンバ関数
-public:
-	//コンストラクタ
-	DebugObject(int* handles_);
-	//デストラクタ
-	~DebugObject();
-
-	void Update() override;
-	void Draw() override;
-
-	int GetValue() { return i; }
-
-private:
-	int i = 0;
-};
+#include "..\Input\Input.h"
+#include "..\Mario\Mario.h"
 
 class DebugObject02 : public ObjectBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	DebugObject02(std::function<int(void)> add_func);
+	DebugObject02();
 	//デストラクタ
 	~DebugObject02();
 
@@ -33,8 +18,6 @@ public:
 
 
 	void OnCollision(const CollideResult& other_) override;
-
-	std::function<int(void)> addFunc;
 };
 
 class DebugScene_Awata : public SceneBase {
@@ -51,5 +34,6 @@ public:
 
 	//メンバ変数
 private:
+	Mario* mario = new Mario(Vector2(0, 0));
 	float timer = 0.0f;
 };

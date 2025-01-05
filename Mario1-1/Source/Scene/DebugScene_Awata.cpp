@@ -2,15 +2,9 @@
 #include "..\ManagerClass\ObjectManager.h"
 #include "..\ManagerClass\FPSManager.h"
 
-DebugObject::DebugObject(int* handles_)
-	: ObjectBase(Vector2(40, 40), "test01",30, 30) {
-}
-
-DebugObject::~DebugObject() {}
-
 //コンストラクタ
-DebugObject02::DebugObject02(std::function<int(void)> add_func)
-	: ObjectBase(Vector2(80, 80), "Block", 30, 30), addFunc(add_func) {}
+DebugObject02::DebugObject02()
+	: ObjectBase(Vector2(0, 450), "Block", 520, 30) {}
 //デストラクタ
 DebugObject02::~DebugObject02() {}
 
@@ -20,33 +14,9 @@ void DebugObject02::Draw() {}
 //コンストラクタ
 DebugScene_Awata::DebugScene_Awata()
 	: SceneBase("DebugScene : Awata") {
-	std::vector<int> handle = { 1 };
-	DebugObject* object = new DebugObject(&handle[0]);
-	std::function<int(void)> func = std::bind(&DebugObject::GetValue, object);
-	DebugObject02* object02 = new DebugObject02(func);
-}
-
-void DebugObject::Update() {
-
-	if (CheckHitKey(KEY_INPUT_A)) {
-		position.x -= 1;
-	}
-	if (CheckHitKey(KEY_INPUT_D)) {
-		position.x += 1;
-	}
-	if (CheckHitKey(KEY_INPUT_W)) {
-		position.y -= 1;
-	}
-	if (CheckHitKey(KEY_INPUT_S)) {
-		position.y += 1;
-	}
-
-	
-}
-
-void DebugObject::Draw() {
-	
-	DrawFormatString(200, 200, GetColor(255, 255, 255), "%d", i);
+	DebugObject02* object02 = new DebugObject02();
+	Input::CreateInstance();
+	Input::GetInstance().SetUpJoypadInput(DX_PADTYPE_DUAL_SENSE);
 }
 
 void DebugObject02::OnCollision(const CollideResult& other_) {
@@ -55,14 +25,18 @@ void DebugObject02::OnCollision(const CollideResult& other_) {
 }
 
 //デストラクタ
-DebugScene_Awata::~DebugScene_Awata() {}
+DebugScene_Awata::~DebugScene_Awata() {
+	Input::DeleteInsatance();
+}
 
 //更新処理
 SceneBase* DebugScene_Awata::Update() {
 	
+	Input::GetInstance().GetInputState();
 	//ゲーム内のオブジェクトの更新処理
 	ObjectManager::GetInstance()->Update();
 	timer += FPSManager::GetInstance()->GetDeltaTime();
+	
 	return this;
 }
 
