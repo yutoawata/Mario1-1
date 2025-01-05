@@ -30,10 +30,11 @@ public:
 	bool Collide(BoxCollider& other_);
 	
 	//メンバ変数
+protected:
+	Vector2 length;			//各軸方向の幅(x:横幅, y:縦幅)
 private:
 	std::string tag;		//コライダータグ
 	Vector2& leftUpPosition;//オブジェクトの原点座標(左上)
 	Vector2 latePosition;	//移動前の座標
 	Vector2 moveVector;		//移動ベクトル
-	Vector2 length;			//各軸方向の幅(x:横幅, y:縦幅)
 };

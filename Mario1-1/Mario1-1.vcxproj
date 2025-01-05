@@ -145,6 +145,7 @@
     <ClCompile Include="Source\Collider\CollideResult.cpp" />
     <ClCompile Include="Source\GameMain\GameManager.cpp" />
     <ClCompile Include="Source\GameMain\Main.cpp" />
+    <ClCompile Include="Source\Input\Input.cpp" />
     <ClCompile Include="Source\ManagerClass\FPSManager.cpp" />
     <ClCompile Include="Source\ManagerClass\ImageManager.cpp" />
     <ClCompile Include="Source\ManagerClass\ObjectManager.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="Source\Collider\BoxCollider.h" />
     <ClInclude Include="Source\Collider\CollideResult.h" />
     <ClInclude Include="Source\GameMain\GameManagerh.h" />
+    <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Item\ItemType.h" />
     <ClInclude Include="Source\ManagerClass\FPSManager.h" />
     <ClInclude Include="Source\ManagerClass\ImageManager.h" />
