@@ -42,8 +42,3 @@ void ImageManager::DeleteImageArray(int* handle_, int size)
 		DeleteGraph(handle_[i]);
 	}
 }
-
-void ImageManager::DebugDraw()
-{
-	DrawGraph(10,10,fGroundBlockHnadle,FALSE);
-}

@@ -15,9 +15,6 @@ public:
 
 	~ImageManager(); // デストラクタ
 
-	void DebugDraw();
-
-
 	// アクセサ
 	int GetFGroundBlockHandle() { return fGroundBlockHnadle; }
 	int* GetFBrickBlockHandle() { return fBrickBlockHandle; }
