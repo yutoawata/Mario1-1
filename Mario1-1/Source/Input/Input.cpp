@@ -1,6 +1,6 @@
 #include "Input.h"
 
-Input* Input::instance = new Input();
+Input* Input::instance = nullptr;
 
 //コンストラクタ
 Input::Input() {}
