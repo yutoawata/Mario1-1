@@ -67,6 +67,17 @@
     <ClCompile Include="Source\Input\Input.cpp">
       <Filter>Input</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Block\QuestionBlock.cpp" />
+    <ClCompile Include="Source\ManagerClass\ImageManager.cpp" />
+    <ClCompile Include="Source\Mario\State\BigState.cpp">
+      <Filter>Mario\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mario\State\FireState.cpp">
+      <Filter>Mario\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BaseClass\StateBase.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
@@ -135,6 +146,17 @@
     <ClInclude Include="Source\Input\Input.h">
       <Filter>Input</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Block\QuestionBlock.h" />
+    <ClInclude Include="Source\ManagerClass\ImageManager.h" />
+    <ClInclude Include="Source\Mario\State\BigStateh.h">
+      <Filter>Mario\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mario\State\FireState.h">
+      <Filter>Mario\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseClass\StateBase.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BaseClass">
@@ -169,6 +191,9 @@
     </Filter>
     <Filter Include="Input">
       <UniqueIdentifier>{db6e55da-ea57-41c5-81d6-8bf5d57dd9f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mario\State">
+      <UniqueIdentifier>{c07077e0-7905-41be-b1b3-e2bfedb9c79c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -13,6 +13,7 @@ private:
 
 	//アクセサ
 public:
+	//外部参照用のインスタンスを渡す
 	static Input& GetInstance() { return *instance; }
 	//左のJoyStickの入力情報を取得
 	Vector2 GetInputLeftJoyStick() { return leftJoyStick; }
