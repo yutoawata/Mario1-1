@@ -3,7 +3,9 @@
 
 //コンストラクタ
 DebugScene_Itou::DebugScene_Itou()
-	:SceneBase("DebugScene : Itou") {}
+	:SceneBase("DebugScene : Itou")
+{
+}
 
 //デストラクタ
 DebugScene_Itou::~DebugScene_Itou() {}
