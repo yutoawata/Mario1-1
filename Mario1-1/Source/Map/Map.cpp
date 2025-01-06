@@ -79,29 +79,5 @@ void Map::MovePositionDebug()
 
 void Map::ViewDataDebug()
 {
-	std::vector<int> tempdata;
-	Vector2 draw_pos;
-	DrawFormatString(6 * BLOCK_SIZE, 10, GetColor(255, 255, 255), "X:%d,Y:%d,MAPDATA:%d", position.x, position.y,position.x + position.y * MAP_SIZE_X);
-
-	for (int y = 0; y < 15; ++y)
-	{
-		for (int x = 0; x < 16; ++x)
-		{
-			tempdata.push_back(mapData[(x + position.x) + (y + position.y) * MAP_SIZE_X]);
-		}
-	}
-
-	DrawFormatString(10 * BLOCK_SIZE, 10, GetColor(255, 255, 255), "data.size:%d",tempdata.size());
-
-	for (int i = 0; i < tempdata.size(); ++i)
-	{
-		DrawFormatString(draw_pos.x * BLOCK_SIZE, BLOCK_SIZE + draw_pos.y * BLOCK_SIZE, GetColor(255, 255, 255), "%d", tempdata[i]);
-		draw_pos.x++;
-		if (draw_pos.x > 15)
-		{
-			draw_pos.x = 0;
-			draw_pos.y++;
-		}
-	}
 
 }

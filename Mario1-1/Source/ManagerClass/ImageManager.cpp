@@ -1,8 +1,7 @@
 #include "ImageManager.h"
 
 ImageManager::ImageManager()
-{
-	
+{	
 	fGroundBlockHnadle = LoadGraph("././Resource/Images/fGroundBlock.png");
 	LoadDivGraph("././Resource/Images/fBrickBlock.png",2,2,1,32,32,fBrickBlockHandle);
 	bGroundBlockHandle = LoadGraph("././Resource/Images/bGroundBlock.png");
