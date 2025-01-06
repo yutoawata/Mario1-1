@@ -2,6 +2,8 @@
 #include "..\BaseClass\SceneBase.h"
 #include "..\Map\Map.h"
 #include "..\Block\BrickBlock.h"
+#include "..\ManagerClass\ImageManager.h"
+
 class DebugScene_Itou : public SceneBase {
 public:
 	// メンバ関数
@@ -16,7 +18,4 @@ public:
 private:
 
 	int debughandle[4];
-
-	BrickBlock* brickblock = new BrickBlock();
-
 };
