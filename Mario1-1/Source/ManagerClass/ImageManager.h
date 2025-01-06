@@ -7,6 +7,12 @@ class ImageManager
 public:
 	// メンバ関数
 
+	static ImageManager& GetInstance()
+	{
+		static ImageManager instance;
+		return instance;
+	}
+
 	~ImageManager(); // デストラクタ
 
 	// アクセサ
@@ -27,6 +33,8 @@ private:
 
 	// メンバ関数
 	ImageManager(); // コンストラクタ
+	ImageManager(const ImageManager&) = delete;
+	ImageManager& operator=(const ImageManager&) = delete;
 
 	void DeleteImageArray(int* handle, int size); // イメージハンドル解放
 
