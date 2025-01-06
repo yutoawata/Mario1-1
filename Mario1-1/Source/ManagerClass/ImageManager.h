@@ -15,6 +15,9 @@ public:
 
 	~ImageManager(); // デストラクタ
 
+	void DebugDraw();
+
+
 	// アクセサ
 	int GetFGroundBlockHandle() { return fGroundBlockHnadle; }
 	int* GetFBrickBlockHandle() { return fBrickBlockHandle; }
@@ -29,6 +32,7 @@ public:
 	int* GetStarHandle() { return starHandle; }
 	int* GetGoombaHandle() { return goombaHandle; }
 	int* GetKoopaTroopaHandle(){ return koopaTroopaHandle; }
+
 private:
 
 	// メンバ関数
@@ -37,6 +41,7 @@ private:
 	ImageManager& operator=(const ImageManager&) = delete;
 
 	void DeleteImageArray(int* handle, int size); // イメージハンドル解放
+
 
 	// メンバ変数
 	int fGroundBlockHnadle;		// 表面用地面ブロック画像保存ハンドル
