@@ -1,8 +1,6 @@
 #pragma once
 #include "..\BaseClass\SceneBase.h"
 #include "..\Map\Map.h"
-#include "..\Block\BrickBlock.h"
-#include "..\ManagerClass\ImageManager.h"
 
 class DebugScene_Itou : public SceneBase {
 public:
@@ -11,11 +9,8 @@ public:
 	DebugScene_Itou(); // コンストラクタ
 	~DebugScene_Itou(); // デストラクタ
 
-	SceneBase* Update() override;
-
-	void Draw() override;
+	SceneBase* Update() override; // 更新処理
+	void Draw() override; // 描画処理
 
 private:
-
-	int debughandle[4];
 };

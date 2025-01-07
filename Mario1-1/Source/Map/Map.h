@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "..\Item\ItemType.h"
+#include "..\ManagerClass\ImageManager.h"
 #include "..\\Math\\Vector2.h" // デバッグ用
 #include <stdio.h>
 #include <vector>
@@ -33,13 +34,6 @@ private:
 	const int BLOCK_SIZE = 32;  // １ブロックのサイズ
 
 	// メンバ変数
-
-	std::vector<int> fGroundBlockImageHandle;   // 地面ブロックの画像ハンドル 
-	std::vector<int> fUnbreakBlockImageHandle;  // 非破壊ブロックの画像ハンドル
-	std::vector<int> fBrickBlockImageHandle;	// レンガブロックの画像ハンドル
-	std::vector<int> fQuestionBlockImageHandle; // ？ブロックの画像ハンドル
-	std::vector<int> bGroundBlockImageHandle;   // 地面ブロックの画像ハンドル
-	std::vector<int> bBrickBlockImageHandle;	// レンガブロックの画像ハンドル
 
 	int* mapData = new int[MAP_SIZE_X * MAP_SIZE_Y]; // マップデータ保存配列
 	int mapDataHandle; // マップデータのハンドル
