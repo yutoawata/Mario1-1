@@ -1,12 +1,8 @@
 #pragma once
 #include "DxLib.h"
-#include "..\Item\ItemType.h"
-#include "..\ManagerClass\ImageManager.h"
-#include "..\\Math\\Vector2.h" // デバッグ用
-#include <stdio.h>
-#include <vector>
-#include <string>
-
+#include "../Item/ItemType.h"
+#include "../ManagerClass/ImageManager.h"
+#include "../Block/NormalBlock.h"
 
 
 class Map
@@ -17,8 +13,7 @@ public:
 
 	Map(); // コンストラクタ
 	~Map(); // デストラクタ
-	void MovePositionDebug(); // マップ移動(デバッグ)
-	void ViewDataDebug(); // マップデータ表示(デバッグ用)
+	void ViewMapData(); // マップデータ表示
 
 
 private:
@@ -37,8 +32,4 @@ private:
 
 	int* mapData = new int[MAP_SIZE_X * MAP_SIZE_Y]; // マップデータ保存配列
 	int mapDataHandle; // マップデータのハンドル
-	Vector2 position = Vector2::ZERO;
-	bool isHitKey = false;
-
-
 };

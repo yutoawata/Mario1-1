@@ -13,4 +13,7 @@ public:
 	void Draw() override; // 描画処理
 
 private:
+
+	Map* map = new Map();
+
 };
