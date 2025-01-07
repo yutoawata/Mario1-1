@@ -9,7 +9,9 @@ DebugObject02::DebugObject02()
 DebugObject02::~DebugObject02() {}
 
 void DebugObject02::Update() {}
-void DebugObject02::Draw() {}
+void DebugObject02::Draw() {
+	DrawCollider();
+}
 
 //コンストラクタ
 DebugScene_Awata::DebugScene_Awata()
