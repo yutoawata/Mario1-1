@@ -3,7 +3,6 @@
 Map::Map()
 {
 	LoadMapData();
-
 }
 
 Map::~Map()
@@ -24,60 +23,7 @@ void Map::LoadMapData()
 	FileRead_close(mapDataHandle);
 }
 
-void Map::MovePositionDebug()
-{
-	if (CheckHitKeyAll())
-	{
-		if (isHitKey)
-		{
-			return;
-		}
-
-		if (CheckHitKey(KEY_INPUT_UP))
-		{
-			position.y--;
-			isHitKey = true;
-			if (position.y < 0)
-			{
-				position.y = 0;
-			}
-		}
-		else if (CheckHitKey(KEY_INPUT_DOWN))
-		{
-			position.y++;
-			isHitKey = true;
-			if (position.y > MAP_SIZE_Y/2)
-			{
-				position.y = MAP_SIZE_Y/2;
-			}
-		}
-		
-		if (CheckHitKey(KEY_INPUT_LEFT))
-		{
-			position.x--;
-			isHitKey = true;
-			if (position.x < 0)
-			{
-				position.x = 0;
-			}
-		}
-		else if (CheckHitKey(KEY_INPUT_RIGHT))
-		{
-			position.x++;
-			isHitKey = true;
-			if (position.x > MAP_SIZE_X)
-			{
-				position.x = MAP_SIZE_X;
-			}
-		}
-	}
-	else
-	{
-		isHitKey = false;
-	}
-}
-
-void Map::ViewDataDebug()
+void Map::ViewMapData()
 {
 	for (int y = 0; y < MAP_SIZE_Y; ++y)
 	{
@@ -93,6 +39,7 @@ void Map::ViewDataDebug()
 			case 1:
 			{
 				// 地面ブロック(表)
+				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetFGroundBlockHandle());
 				break;
 			}
 			case 2:

@@ -5,10 +5,17 @@
 DebugScene_Itou::DebugScene_Itou()
 	:SceneBase("DebugScene : Itou")
 {
+	if (ImageManager::LoadImages() == false)
+	{
+		return;
+	}
 }
 
 //デストラクタ
-DebugScene_Itou::~DebugScene_Itou() {}
+DebugScene_Itou::~DebugScene_Itou() 
+{
+	ImageManager::DeleteImages();
+}
 
 //更新処理
 SceneBase* DebugScene_Itou::Update() {
@@ -23,6 +30,8 @@ SceneBase* DebugScene_Itou::Update() {
 //描画処理
 void DebugScene_Itou::Draw() {
 	DrawType();
+
+	map->ViewMapData();
 
 	//ゲーム内のオブジェクトの描画処理
 	ObjectManager::GetInstance()->Draw();
