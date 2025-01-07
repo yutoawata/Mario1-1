@@ -1,18 +1,18 @@
 #pragma once
-#include "../../BaseClass/StateBase.h"
+#include "..\..\BaseClass\StateBase.h"
 
 template<class Holder>
-class FireState : public StateBase<Holder> {
+class SuperState : public StateBase<Holder> {
 	//メンバ関数
 public:
 	//コンストラクタ
-	FireState(Holder& holder_);
+	SuperState(Holder& holder);
 	//デストラクタ
-	~FireState();
+	~SuperState();
 
 	//更新処理
 	StateBase<Holder>* Update() override;
-	
+
 private:
 
 };

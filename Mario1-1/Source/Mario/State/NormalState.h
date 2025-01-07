@@ -2,17 +2,16 @@
 #include "../../BaseClass/StateBase.h"
 
 template<class Holder>
-class FireState : public StateBase<Holder> {
+class NormalState : public StateBase<Holder> {
 	//メンバ関数
 public:
 	//コンストラクタ
-	FireState(Holder& holder_);
+	NormalState(Holder& holder_);
 	//デストラクタ
-	~FireState();
+	~NormalState();
 
 	//更新処理
 	StateBase<Holder>* Update() override;
-	
-private:
 
+private:
 };

@@ -10,7 +10,7 @@ class ObjectBase : public BoxCollider {
 	//
 public:
 	//コンストラクタ
-	ObjectBase(Vector2 position_, int image_handle, std::string tag_ = "");
+	ObjectBase(Vector2 position_, int image_handle, std::string tag_ = " ");
 	ObjectBase(Vector2 position_, std::string tag_, int width, int height);
 	//デストラクタ
 	virtual ~ObjectBase();

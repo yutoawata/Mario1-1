@@ -25,7 +25,6 @@ void ObjectManager::Draw() {
 	for (ObjectBase* const object : objectList) {
 		if (object->IsVisible()) {
 			object->Draw();
-			object->DrawCollider();
 		}
 	}
 }
