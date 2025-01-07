@@ -73,6 +73,18 @@
     <ClCompile Include="Source\Block\QuestionBlock.cpp">
       <Filter>Block</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mario\State\SuperState.cpp">
+      <Filter>Mario\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mario\State\FireState.cpp">
+      <Filter>Mario\State</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BaseClass\StateBase.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mario\State\NormalState.cpp">
+      <Filter>Mario\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
@@ -146,6 +158,18 @@
     </ClInclude>
     <ClInclude Include="Source\Block\QuestionBlock.h">
       <Filter>Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mario\State\SuperState.h">
+      <Filter>Mario\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mario\State\FireState.h">
+      <Filter>Mario\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BaseClass\StateBase.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mario\State\NormalState.h">
+      <Filter>Mario\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
