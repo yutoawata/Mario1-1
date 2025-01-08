@@ -45,11 +45,13 @@ void Map::ViewMapData()
 			case 2:
 			{
 				// 地面ブロック(裏)
+				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetBGroundBlockHandle());
 				break;
 			}
 			case 3:
 			{
 				// 非破壊ブロック
+				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetUnBreakBlockHandle());
 				break;
 			}
 			case 4:

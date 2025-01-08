@@ -15,5 +15,4 @@ public:
 private:
 
 	Map* map = new Map();
-
 };
