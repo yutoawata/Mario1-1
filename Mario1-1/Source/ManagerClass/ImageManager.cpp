@@ -14,75 +14,73 @@ int ImageManager::starHandle[4] = { 0,0,0,0 };
 int ImageManager::goombaHandle[3] = { 0,0,0 };
 int ImageManager::koopaTroopaHandle[4] = { 0,0,0,0 };
 
-bool ImageManager::LoadImages()
+void ImageManager::LoadImages()
 {
 	fGroundBlockHnadle = LoadGraph("././Resource/Images/fGroundBlock.png");
 	if (fGroundBlockHnadle == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/fBrickBlock.png", 2, 2, 1, 32, 32, fBrickBlockHandle);
 	if (fBrickBlockHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
 	bGroundBlockHandle = LoadGraph("././Resource/Images/bGroundBlock.png");
 	if (bGroundBlockHandle == -1)
 	{
-		return false;
+		return;
 	}
 	bBrickBlockHandle = LoadGraph("././Resource/Images/bBrickBlock.png");
 	if (bBrickBlockHandle == -1)
 	{
-		return false;
+		return;
 	}
 	unBreakBlockHandle = LoadGraph("././Resource/Images/UnBreakBlock.png");
 	if (unBreakBlockHandle == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/QuestionBlock.png", 4, 4, 1, 32, 32, questionBlockHandle);
 	if (questionBlockHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/fCoin.png", 3, 3, 1, 32, 32, fCoinHandle);
 	if (fCoinHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/bCoin.png", 3, 3, 1, 32, 32, bCoinHandle);
 	if (bCoinHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
 	mushroomHandle = LoadGraph("././Resource/Images/Mushroom.png");
 	if (mushroomHandle == -1)
 	{
-		return false;
+		return;
 	}
 	oneUpMushroomHandle = LoadGraph("././Resource/Images/1UPMushroom.png");
 	if (oneUpMushroomHandle == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/Star.png", 4, 4, 1, 32, 32, starHandle);
 	if (starHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/Goomba.png", 3, 3, 1, 32, 32, goombaHandle);
 	if (goombaHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
 	LoadDivGraph("././Resource/Images/KoopaTroopa.png", 4, 4, 1, 32, 45, koopaTroopaHandle);
 	if (koopaTroopaHandle[0] == -1)
 	{
-		return false;
+		return;
 	}
-
-	return true;
 }
 
 void ImageManager::DeleteImages()

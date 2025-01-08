@@ -23,7 +23,7 @@ void Map::LoadMapData()
 	FileRead_close(mapDataHandle);
 }
 
-void Map::ViewMapData()
+void Map::CreateMap()
 {
 	for (int y = 0; y < MAP_SIZE_Y; ++y)
 	{
