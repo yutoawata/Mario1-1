@@ -51,17 +51,20 @@ void Map::CreateMap()
 			case 3:
 			{
 				// 非破壊ブロック
-				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetUnBreakBlockHandle());
+				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), 
+														   ImageManager::GetUnBreakBlockHandle());
 				break;
 			}
 			case 4:
 			{
 				// レンガ(アイテムなし・表)
+				BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetFBrickBlockHandle()[0]);
 				break;
 			}
 			case 5:
 			{
 				// レンガ(アイテムなし・裏)
+				BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetBBrickBlockHandle());
 				break;
 			}
 			case 6:
