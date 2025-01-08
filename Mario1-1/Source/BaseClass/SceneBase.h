@@ -8,7 +8,7 @@ public:
 	//コンストラクタ
 	SceneBase(std::string type_);
 	//デストラクタ
-	~SceneBase();
+	virtual ~SceneBase();
 
 public:
 	//更新処理
