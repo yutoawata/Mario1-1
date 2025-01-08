@@ -12,8 +12,4 @@ public:
 private:
 	// メンバ関数
 	void Move(); // スクロール処理
-
-	// メンバ定数
-	const std::string TAG = "Block"; // Object識別用のタグ
-
 };
