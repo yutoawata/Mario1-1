@@ -7,7 +7,7 @@ class ImageManager
 public:
 	// ƒƒ“ƒoŠÖ”
 
-	static bool LoadImages();
+	static void LoadImages();
 	static void DeleteImages();
 
 
