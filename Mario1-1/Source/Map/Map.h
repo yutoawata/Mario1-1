@@ -3,6 +3,8 @@
 #include "../Item/ItemType.h"
 #include "../ManagerClass/ImageManager.h"
 #include "../Block/NormalBlock.h"
+#include "../Block/BreakBlock.h"
+#include "../Block/BrickBlock.h"
 
 
 class Map
