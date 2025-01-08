@@ -13,8 +13,7 @@ public:
 
 	Map(); // コンストラクタ
 	~Map(); // デストラクタ
-	void ViewMapData(); // マップデータ表示
-
+	void CreateMap(); // マップの生成
 
 private:
 
