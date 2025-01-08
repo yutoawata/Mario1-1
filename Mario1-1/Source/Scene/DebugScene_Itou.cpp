@@ -15,6 +15,7 @@ DebugScene_Itou::DebugScene_Itou()
 DebugScene_Itou::~DebugScene_Itou() 
 {
 	ImageManager::DeleteImages();
+	delete map;
 }
 
 //更新処理
@@ -31,7 +32,7 @@ SceneBase* DebugScene_Itou::Update() {
 void DebugScene_Itou::Draw() {
 	DrawType();
 
-	map->ViewMapData();
+	//map->ViewMapData();
 
 	//ゲーム内のオブジェクトの描画処理
 	ObjectManager::GetInstance()->Draw();
