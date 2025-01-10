@@ -19,67 +19,67 @@ void ImageManager::LoadImages()
 	fGroundBlockHnadle = LoadGraph("././Resource/Images/fGroundBlock.png");
 	if (fGroundBlockHnadle == -1)
 	{
-		return;
+		printfDx("ERROR:fGroundBlockHnadle");
 	}
 	LoadDivGraph("././Resource/Images/fBrickBlock.png", 2, 2, 1, 32, 32, fBrickBlockHandle);
 	if (fBrickBlockHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:fBrickBlockHandle");
 	}
 	bGroundBlockHandle = LoadGraph("././Resource/Images/bGroundBlock.png");
 	if (bGroundBlockHandle == -1)
 	{
-		return;
+		printfDx("ERROR:bGroundBlockHandle");
 	}
 	bBrickBlockHandle = LoadGraph("././Resource/Images/bBrickBlock.png");
 	if (bBrickBlockHandle == -1)
 	{
-		return;
+		printfDx("ERROR:bBrickBlockHandle");
 	}
 	unBreakBlockHandle = LoadGraph("././Resource/Images/UnBreakBlock.png");
 	if (unBreakBlockHandle == -1)
 	{
-		return;
+		printfDx("ERROR:unBreakBlockHandle");
 	}
 	LoadDivGraph("././Resource/Images/QuestionBlock.png", 4, 4, 1, 32, 32, questionBlockHandle);
 	if (questionBlockHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:questionBlockHandle");
 	}
-	LoadDivGraph("././Resource/Images/fCoin.png", 3, 3, 1, 32, 32, fCoinHandle);
+	LoadDivGraph("././Resource/Images/Coins_01.png", 3, 3, 1, 32, 32, fCoinHandle);
 	if (fCoinHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:fCoinHandle");
 	}
-	LoadDivGraph("././Resource/Images/bCoin.png", 3, 3, 1, 32, 32, bCoinHandle);
+	LoadDivGraph("././Resource/Images/Coins_02.png", 3, 3, 1, 32, 32, bCoinHandle);
 	if (bCoinHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:bCoinHandle");
 	}
 	mushroomHandle = LoadGraph("././Resource/Images/Mushroom.png");
 	if (mushroomHandle == -1)
 	{
-		return;
+		printfDx("ERROR:mushroomHandle");
 	}
 	oneUpMushroomHandle = LoadGraph("././Resource/Images/1UPMushroom.png");
 	if (oneUpMushroomHandle == -1)
 	{
-		return;
+		printfDx("ERROR:oneUpMushroomHandle");
 	}
 	LoadDivGraph("././Resource/Images/Star.png", 4, 4, 1, 32, 32, starHandle);
 	if (starHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:starHandle");
 	}
 	LoadDivGraph("././Resource/Images/Goomba.png", 3, 3, 1, 32, 32, goombaHandle);
 	if (goombaHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:goombaHandle");
 	}
 	LoadDivGraph("././Resource/Images/KoopaTroopa.png", 4, 4, 1, 32, 45, koopaTroopaHandle);
 	if (koopaTroopaHandle[0] == -1)
 	{
-		return;
+		printfDx("ERROR:koopaTroopaHandle");
 	}
 }
 
