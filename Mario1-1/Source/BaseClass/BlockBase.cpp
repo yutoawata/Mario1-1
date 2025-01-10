@@ -24,20 +24,20 @@ void BlockBase::Move()
 	{
 		if (CheckHitKey(KEY_INPUT_W))
 		{
-			position.y--;
+			position.y -= 5;
 		}
 		else if (CheckHitKey(KEY_INPUT_S))
 		{
-			position.y++;
+			position.y += 5;
 		}
 
 		if (CheckHitKey(KEY_INPUT_A))
 		{
-			position.x--;
+			position.x -= 5;
 		}
 		else if (CheckHitKey(KEY_INPUT_D))
 		{
-			position.x++;
+			position.x += 5;
 		}
 	}
 }
