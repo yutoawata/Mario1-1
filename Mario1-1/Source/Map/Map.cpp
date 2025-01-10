@@ -57,34 +57,48 @@ void Map::CreateMap()
 			}
 			case 4:
 			{
-				// レンガ(アイテムなし・表)
-				BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetFBrickBlockHandle()[0]);
+				// レンガ(アイテムなし・表・破壊可)
+				//BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+				//												ImageManager::GetFBrickBlockHandle()[0]);
 				break;
 			}
 			case 5:
 			{
-				// レンガ(アイテムなし・裏)
-				BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetBBrickBlockHandle());
+				// レンガ(アイテムなし・裏・非破壊)
+				//NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+				//										   ImageManager::GetBBrickBlockHandle());
 				break;
 			}
 			case 6:
 			{
 				// レンガ(コイン・表)
+				BrickBlock* brickBlock = new BrickBlock(ImageManager::GetFBrickBlockHandle(),
+														Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+														ItemType::COIN, 5);
 				break;
 			}
 			case 7:
 			{
 				// レンガ(スター・表)
+				BrickBlock* brickBlock = new BrickBlock(ImageManager::GetFBrickBlockHandle(),	
+														Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+														ItemType::STAR);
 				break;
 			}
 			case 8:
 			{
 				// ?(コイン) 
+				QuestionBlock* questionBlock = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
+																 Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+																 ItemType::COIN);
 				break;
 			}
 			case 9:
 			{
 				// ?(キノコ)
+				QuestionBlock* questionBlock = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
+																 Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+																 ItemType::MASHROOM);
 				break;
 			}
 			case 10:

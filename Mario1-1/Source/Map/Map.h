@@ -5,6 +5,7 @@
 #include "../Block/NormalBlock.h"
 #include "../Block/BreakBlock.h"
 #include "../Block/BrickBlock.h"
+#include "../Block/QuestionBlock.h"
 
 
 class Map
