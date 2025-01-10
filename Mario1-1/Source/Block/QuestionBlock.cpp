@@ -27,5 +27,5 @@ void QuestionBlock::Update()
 
 void QuestionBlock::Draw()
 {
-	DrawGraph(position.x, position.y, imageHandles[loopPatern[count]], TRUE);
+	DrawGraph(position.x, position.y, imageHandles[0], TRUE);
 }
