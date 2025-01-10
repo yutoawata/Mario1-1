@@ -81,6 +81,8 @@ void ImageManager::LoadImages()
 	{
 		printfDx("ERROR:koopaTroopaHandle");
 	}
+
+	printfDx("FINISH:LOADIMAGES");
 }
 
 void ImageManager::DeleteImages()
