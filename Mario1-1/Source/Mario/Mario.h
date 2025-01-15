@@ -37,7 +37,7 @@ public:
 	//アニメーション再生処理
 	void PlayAnimation();
 
-	static const int JUMP_POWER = 10;	//ジャンプする力
+	static const int JUMP_POWER = 20;	//ジャンプする力
 	static int scrollValue;				//画面スクロールの移動量
 private:
 	int handle[9];						//画像素材のハンドルの配列
