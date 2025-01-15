@@ -51,7 +51,6 @@ bool BoxCollider::Collide(BoxCollider& other_) {
 	else {
 		if (ObjectManager::CheckCollision(*this, static_cast<const BoxCollider&>(other_))) {
 			isCollide = true;
-			DrawString(150, 0, "Collide", GetColor(255, 255, 255));
 		}
 	}
 	//移動前の座標を更新

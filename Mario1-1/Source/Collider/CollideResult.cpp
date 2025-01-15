@@ -2,16 +2,16 @@
 
 CollideResult::CollideResult(const ObjectBase& object_, std::string collideDirection) 
 	: object(object_) {
-	if (collideDirection == "è„") {
+	if (collideDirection == "Up") {
 		isUpCollide = true;
 	}
-	else if (collideDirection == "â∫") {
+	else if (collideDirection == "Down") {
 		isBottomCollide = true;
 	}
-	else if (collideDirection == "ç∂") {
+	else if (collideDirection == "Left") {
 		isLeftCollide = true;
 	}
-	else if (collideDirection == "âE") {
+	else if (collideDirection == "Right") {
 		isRightCollide = true;
 	}
 }
