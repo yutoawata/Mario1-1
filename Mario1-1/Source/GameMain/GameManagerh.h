@@ -3,13 +3,13 @@
 #include "..\BaseClass\SceneBase.h"
 #include "..\Scene\TitleScene.h"
 
-class GameManger {
+class GameManager {
 	//メンバ関数
 public:
 	//コンストラクタ
-	GameManger();
+	GameManager();
 	//デストラクタ
-	~GameManger();
+	~GameManager();
 
 	//ゲームループ処理
 	void ExcuteGameLoop();

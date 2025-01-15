@@ -1,18 +1,18 @@
 #pragma once
 #include "..\..\BaseClass\StateBase.h"
 
-template<class Holder>
-class SuperState : public StateBase<Holder> {
+class SuperState : public StateBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	SuperState(Holder& holder);
+	SuperState(Mario& holder);
 	//デストラクタ
 	~SuperState();
 
 	//更新処理
-	StateBase<Holder>* Update() override;
+	StateBase* ChangeState(std::string item_type) override;
+	void Update() override;
 
+	const std::string needItem = "Mathroom";
 private:
-
 };

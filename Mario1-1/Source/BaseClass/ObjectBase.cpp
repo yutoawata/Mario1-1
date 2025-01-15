@@ -18,6 +18,9 @@ ObjectBase::~ObjectBase() {}
 //更新処理
 void ObjectBase::Update() {}
 
+//判定処理後の更新処理
+void ObjectBase::LateUpdate() {}
+
 //描画処理
 void ObjectBase::Draw() {}
 

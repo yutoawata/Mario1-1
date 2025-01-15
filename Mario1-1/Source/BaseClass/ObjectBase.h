@@ -22,7 +22,9 @@ public:
 	bool IsActive() const { return isActive; }
 
 	//更新処理
-	virtual void Update() = 0;
+	virtual void Update();
+	//判定処理後の更新処理
+	virtual void LateUpdate();
 	//描画処理
 	virtual void Draw() = 0;
 	//衝突時の処理

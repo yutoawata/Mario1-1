@@ -17,8 +17,8 @@ void Input::SetUpJoypadInput(int input_type) {
 	case DX_PADTYPE_DUAL_SENSE:
 		upButtonNum = 3;
 		downButtonNum = 1;
-		leftButtonNum = 2;
-		rightButtonNum = 0;
+		leftButtonNum = 0;
+		rightButtonNum = 2;
 		break;
 		//XBox・SwitchProコントローラー用設定
 	case DX_PADTYPE_XBOX_ONE:
@@ -38,8 +38,8 @@ void Input::GetInputState() {
 
 	DrawFormatString(10, 100, GetColor(255, 255, 0), "%c", i);
 
-	DrawFormatString(10, 50, GetColor(255, 255, 0), "%d", inputState.POV[0]);
-	DrawFormatString(10, 100, GetColor(255, 255, 0), "%d", inputState.POV[1]);
-	DrawFormatString(10, 150, GetColor(255, 255, 0), "%d", inputState.POV[2]);
-	DrawFormatString(10, 200, GetColor(255, 255, 0), "%d", inputState.POV[3]);
+	DrawFormatString(10, 50, GetColor(255, 255, 0), "%d", inputState.Buttons[0]);
+	DrawFormatString(10, 100, GetColor(255, 255, 0), "%d", inputState.Buttons[1]);
+	DrawFormatString(10, 150, GetColor(255, 255, 0), "%d", inputState.Buttons[2]);
+	DrawFormatString(10, 200, GetColor(255, 255, 0), "%d", inputState.Buttons[3]);
 }

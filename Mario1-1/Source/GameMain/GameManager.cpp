@@ -7,7 +7,7 @@ const int SCREEN_HEIGHT = 1080;	//ゲームウィンドウの縦幅
 const int SCREEN_COLOR = 32;		//ゲームウィンドウのカラービット
 
 //コンストラクタ
-GameManger::GameManger() {
+GameManager::GameManager() {
 	SetGraphMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_COLOR);
 
 	ChangeWindowMode(TRUE);
@@ -19,13 +19,13 @@ GameManger::GameManger() {
 }
 
 //デストラクタ
-GameManger::~GameManger(){
+GameManager::~GameManager(){
 	ObjectManager::GetInstance()->DeleteInstance();
 	delete currentScene;
 }
 
 //ゲームループ処理
-void GameManger::ExcuteGameLoop() {
+void GameManager::ExcuteGameLoop() {
 
 	//ゲームループ
 	while (!ProcessMessage() && isInit == FALSE)
