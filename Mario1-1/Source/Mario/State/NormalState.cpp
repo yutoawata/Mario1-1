@@ -1,25 +1,30 @@
 #include "NormalState.h"
 #include "../../ManagerClass/FPSManager.h"
-#include "..\Mario.h"
-
-template class NormalState<Mario>;
+#include "FireState.h"
 
 //コンストラクタ
-template<class Holder>
-NormalState<Holder>::NormalState(Holder& holder_)
-	: StateBase<Holder>(holder_, holder_.GetHandle()) {}
+NormalState::NormalState(Mario& holder_)
+	: StateBase(holder_, holder_.GetHandle()) {}
 
 //デストラクタ
-template<class Holder>
-NormalState<Holder>::~NormalState() {}
+NormalState::~NormalState() {}
 
 //更新処理
-template<class Holder>
-StateBase<Holder>* NormalState<Holder>::Update() {
+StateBase* NormalState::ChangeState(std::string item_type) {
 	if (this->holder.IsDamage()) {
 		delete this;
 		return nullptr;
 	}
 
+	if (item_type == "FireFlower") {
+		Mario& holder = this->holder;
+		delete this;
+		return new FireState(holder);
+	}
+	
 	return this;
+}
+
+void NormalState::Update() {
+	this->currentAnim = this->holder.GetAnim();
 }

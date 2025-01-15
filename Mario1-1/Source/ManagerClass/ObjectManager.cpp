@@ -14,9 +14,13 @@ ObjectManager::~ObjectManager() {
 void ObjectManager::Update() {
 	int objectNum = 0;
 	for (ObjectBase* const  object : objectList) {
+		//更新処理
 		object->Update();
+		//当たり判定処理
 		CollideObjects(*object, objectNum);
 		objectNum++;
+		//判定処理後の更新処理
+		object->LateUpdate();
 	}
 }
 

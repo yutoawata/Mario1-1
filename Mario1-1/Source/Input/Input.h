@@ -19,14 +19,16 @@ public:
 	Vector2 GetInputLeftJoyStick() { return leftJoyStick; }
 	//右のJoyStickの入力情報を取得
 	Vector2 GetInputRightJoyStick() { return rightJoyStick; }
+
 	//右側の四つのボタンのうち上のボタンの入力状態を渡す
-	bool GetInputUpButton() { return inputState.Buttons[upButtonNum]; }
+	bool GetInputUpButton() { return inputState.Buttons[upButtonNum] != 0; }
 	//右側の四つのボタンのうち下のボタンの入力状態を渡す
-	bool GetInputDownButton() { return inputState.Buttons[downButtonNum]; }
+	bool GetInputDownButton() { return inputState.Buttons[downButtonNum] != 0; }
 	//右側の四つのボタンのうち左のボタンの入力状態を渡す
-	bool GetInputLeftButton() { return inputState.Buttons[leftButtonNum]; }
+	bool GetInputLeftButton() { return inputState.Buttons[leftButtonNum] != 0; }
 	//右側の四つのボタンのうち右のボタンの入力状態を渡す
-	bool GetInputRightButton() { return inputState.Buttons[rightButtonNum]; }
+	bool GetInputRightButton() { return inputState.Buttons[rightButtonNum] != 0; }
+
 	//十字キーの左入力状態を渡す
 	bool GetInputDirectionButtonLeft() { return inputState.POV[0] == 22500 || inputState.POV[0] == 27000 || inputState.POV[0] == 31500; }
 	//十字キーの右入力状態を渡す

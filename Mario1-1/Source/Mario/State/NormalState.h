@@ -1,17 +1,17 @@
 #pragma once
 #include "../../BaseClass/StateBase.h"
 
-template<class Holder>
-class NormalState : public StateBase<Holder> {
+class NormalState : public StateBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	NormalState(Holder& holder_);
+	NormalState(Mario& holder_);
 	//デストラクタ
 	~NormalState();
 
 	//更新処理
-	StateBase<Holder>* Update() override;
+	StateBase* ChangeState(std::string item_type) override;
+	void Update() override;
 
 private:
 };
