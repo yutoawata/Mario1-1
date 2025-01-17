@@ -12,17 +12,22 @@ public:
 
 
 	// アクセサ
+
+	// ブロック系
 	static int GetFGroundBlockHandle() { return fGroundBlockHnadle; }
 	static int* GetFBrickBlockHandle() { return fBrickBlockHandle; }
 	static int GetBGroundBlockHandle() { return bGroundBlockHandle; }
 	static int GetBBrickBlockHandle() { return bBrickBlockHandle; }
 	static int GetUnBreakBlockHandle() { return unBreakBlockHandle; }
 	static int* GetQuestionBlockHandle() { return questionBlockHandle; }
+	// アイテム系
 	static int* GetFCoinHandle() { return fCoinHandle; }
 	static int* GetBCoinHandle() { return bCoinHandle; }
 	static int GetMushroomHandle() { return mushroomHandle; }
 	static int GetOneUpMushroomHandle() { return oneUpMushroomHandle; }
 	static int* GetStarHandle() { return starHandle; }
+	// キャラクター系
+	static int* GetNormalMarioHandle() { return normalMarioHandle; }
 	static int* GetGoombaHandle() { return goombaHandle; }
 	static int* GetKoopaTroopaHandle(){ return koopaTroopaHandle; }
 
@@ -49,6 +54,7 @@ private:
 	static int starHandle[4];			// スター画像保存ハンドル
 
 	// キャラクター系
+	static int normalMarioHandle[9];			// ミニマリオ画像保存ハンドル
 	static int goombaHandle[3];			// クリボー画像保存ハンドル
 	static int koopaTroopaHandle[4];	// ノコノコ画像保存ハンドル
 };
