@@ -4,10 +4,11 @@
 //コンストラクタ
 
 FireState::FireState(Mario& holder_)
-	: StateBase(holder_, holder_.GetHandle()) {}
+	: StateBase(holder_, holder_.FireImageHandle) {}
 
 //デストラクタ
 FireState::~FireState() {}
+
 
 //更新処理
 StateBase* FireState::ChangeState(std::string item_type) {
