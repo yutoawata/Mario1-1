@@ -7,12 +7,20 @@ int ImageManager::bGroundBlockHandle = 0;
 int ImageManager::bBrickBlockHandle = 0;
 int ImageManager::unBreakBlockHandle = 0;
 int ImageManager::questionBlockHandle[4] = { 0,0,0,0 };
+
+// マップオブジェクト系
+int ImageManager::fPypeHandle[4] = { 0,0,0,0 };
+int ImageManager::bPypeHandle[6] = { 0,0,0,0,0,0 };
+int ImageManager::fortHandle[25] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+int ImageManager::poleHandle[2] = { 0,0 };
+
 // アイテム系
 int ImageManager::fCoinHandle[3] = { 0,0,0 };
 int ImageManager::bCoinHandle[3] = { 0,0,0 };
 int ImageManager::mushroomHandle = 0;
 int ImageManager::oneUpMushroomHandle = 0;
 int ImageManager::starHandle[4] = { 0,0,0,0 };
+
 // キャラクター系
 int ImageManager::normalMarioHandle[9] = { 0,0,0,0,0,0,0,0,0 };
 int ImageManager::goombaHandle[3] = { 0,0,0 };
@@ -55,6 +63,32 @@ void ImageManager::LoadImages()
 	if (questionBlockHandle[0] == -1)
 	{
 		printfDx("ERROR:questionBlockHandle");
+		return;
+	}
+
+	// マップオブジェクト系
+	LoadDivGraph("././Resource/Images/fPype.png", 4, 2, 2, 32, 32, fPypeHandle);
+	if (fPypeHandle[0] == -1)
+	{
+		printfDx("ERROR:fPypeHandle");
+		return;
+	}
+	LoadDivGraph("././Resource/Images/bPype.png", 6, 3, 2, 32, 32, bPypeHandle);
+	if (bPypeHandle[0] == -1)
+	{
+		printfDx("ERROR:bPypeHandle");
+		return;
+	}
+	LoadDivGraph("././Resource/Images/Fort.png", 25, 5, 5, 32, 32, fortHandle);
+	if (fortHandle[0] == -1)
+	{
+		printfDx("ERROR:fortHandle");
+		return;
+	}
+	LoadDivGraph("././Resource/Images/Pole.png", 2, 2, 1, 32, 32, poleHandle);
+	if (poleHandle[0] == -1)
+	{
+		printfDx("ERROR:poleHandle");
 		return;
 	}
 
@@ -122,6 +156,14 @@ void ImageManager::DeleteImages()
 	DeleteGraph(bBrickBlockHandle);
 	DeleteImageArray(questionBlockHandle, 4);
 	DeleteGraph(unBreakBlockHandle);
+
+	// マップオブジェクト系
+	DeleteImageArray(fPypeHandle, 4);
+	DeleteImageArray(bPypeHandle, 6);
+	DeleteImageArray(fortHandle, 25);
+	DeleteImageArray(poleHandle, 2);
+
+
 	// アイテム系
 	DeleteImageArray(fCoinHandle, 3);
 	DeleteImageArray(bCoinHandle, 3);

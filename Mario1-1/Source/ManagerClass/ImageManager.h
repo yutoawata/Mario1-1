@@ -20,12 +20,20 @@ public:
 	static int GetBBrickBlockHandle() { return bBrickBlockHandle; }
 	static int GetUnBreakBlockHandle() { return unBreakBlockHandle; }
 	static int* GetQuestionBlockHandle() { return questionBlockHandle; }
+
+	// マップオブジェクト系
+	static int* GetFPypeHandle() { return fPypeHandle; }
+	static int* GetbPypeHandle() { return bPypeHandle; }
+	static int* GetFortHandle() { return fortHandle; }
+	static int* GetPolehandle() { return poleHandle; }
+
 	// アイテム系
 	static int* GetFCoinHandle() { return fCoinHandle; }
 	static int* GetBCoinHandle() { return bCoinHandle; }
 	static int GetMushroomHandle() { return mushroomHandle; }
 	static int GetOneUpMushroomHandle() { return oneUpMushroomHandle; }
 	static int* GetStarHandle() { return starHandle; }
+	
 	// キャラクター系
 	static int* GetNormalMarioHandle() { return normalMarioHandle; }
 	static int* GetGoombaHandle() { return goombaHandle; }
@@ -47,6 +55,12 @@ private:
 	static int questionBlockHandle[4];  // ？ブロック保存ハンドル
 	static int fCoinHandle[3];			// 表面用コイン画像保存ハンドル
 	static int bCoinHandle[3];			// 裏面用コイン画像保存ハンドル
+
+	// マップオブジェクト系
+	static int fPypeHandle[4];			// 表面用土管画像保存ハンドル
+	static int bPypeHandle[6];			// 裏面用土管画像保存ハンドル
+	static int fortHandle[25];			// 砦画像保存ハンドル
+	static int poleHandle[2];			// ゴールポール画像保存ハンドル
 
 	// アイテム系
 	static int mushroomHandle;			// キノコ画像保存ハンドル
