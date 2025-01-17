@@ -37,6 +37,10 @@ public:
 	//アニメーション再生処理
 	void PlayAnimation();
 
+	static int normalImageHandle[9];
+	static int superImageHandle[9];
+	static int FireImageHandle[9];
+
 	static const int JUMP_POWER = 20;	//ジャンプする力
 	static int scrollValue;				//画面スクロールの移動量
 private:

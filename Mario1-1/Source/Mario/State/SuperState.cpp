@@ -4,7 +4,7 @@
 
 //コンストラクタ
 SuperState::SuperState(Mario& holder_)
-	: StateBase(holder_, holder_.GetHandle()) {
+	: StateBase(holder_, holder_.superImageHandle) {
 
 }
 

@@ -9,6 +9,9 @@ public:
 	//デストラクタ
 	~SuperState();
 
+
+	static void SetUpImageHandle();
+
 	//更新処理
 	StateBase* ChangeState(std::string item_type) override;
 	void Update() override;

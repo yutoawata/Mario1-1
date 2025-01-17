@@ -4,7 +4,7 @@
 
 //コンストラクタ
 NormalState::NormalState(Mario& holder_)
-	: StateBase(holder_, holder_.GetHandle()) {}
+	: StateBase(holder_, holder_.normalImageHandle) {}
 
 //デストラクタ
 NormalState::~NormalState() {}

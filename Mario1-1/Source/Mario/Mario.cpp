@@ -5,6 +5,10 @@
 #include "..\GameMain\GameManagerh.h"
 #include "../ManagerClass/FPSManager.h"
 
+int Mario::normalImageHandle[9] = {};
+int Mario::superImageHandle[9] = {};
+int Mario::FireImageHandle[9] = {};
+
 int Mario::scrollValue = 0;
 
 //コンストラクタ
@@ -12,7 +16,10 @@ Mario::Mario(Vector2 position_)
 	: ObjectBase(position_, 1, "Mario")
 	, moveSpeed(2), currentState(new NormalState(*this)) {
 	length = Vector2(32, 32);
-	LoadDivGraph("././Resource/Images/NormalMario.png", 9, 3, 3, 32, 32, handle);
+	LoadDivGraph("././Resource/Images/NormalMario.png", 9, 3, 3, 32, 32, normalImageHandle);
+	LoadDivGraph("././Resouece/Images/SuperMario.png", 9, 3, 3, 32, 32, superImageHandle);
+	LoadDivGraph("././Resouece/Images/FireMario.png", 9, 3, 3, 32, 32, FireImageHandle);
+	currentState->GetImageHandle(handle);
 	currentAnim = idle;
 }
 
@@ -57,6 +64,7 @@ void Mario::LateUpdate() {
 	currentState->Update();
 	//現在の形態が指定するアニメーションを取得
 	currentAnim = currentState->GetCurrentAnim();
+	currentState->GetImageHandle(handle);
 
 	//アニメーションを再生
 	PlayAnimation();
