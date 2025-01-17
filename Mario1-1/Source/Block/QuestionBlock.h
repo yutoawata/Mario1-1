@@ -24,4 +24,6 @@ private:
 	int* imageHandles; // 画像ハンドルの保存変数
 	int count;
 	float timer; // 画像切り替えのタイマー
+
+	Vector2 move_val = Vector2::ZERO;
 };

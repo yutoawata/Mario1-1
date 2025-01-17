@@ -85,6 +85,9 @@
     <ClCompile Include="Source\Mario\State\NormalState.cpp">
       <Filter>Mario\State</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Debug\DebugBlockMove.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
@@ -171,6 +174,9 @@
     <ClInclude Include="Source\Mario\State\NormalState.h">
       <Filter>Mario\State</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Debug\DebugBlockMove.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BaseClass">
@@ -208,6 +214,9 @@
     </Filter>
     <Filter Include="Mario\State">
       <UniqueIdentifier>{c07077e0-7905-41be-b1b3-e2bfedb9c79c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{5cc1a15c-fc9c-41e4-9848-0e4ee7191776}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

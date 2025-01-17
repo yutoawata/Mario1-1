@@ -20,69 +20,82 @@ void ImageManager::LoadImages()
 	if (fGroundBlockHnadle == -1)
 	{
 		printfDx("ERROR:fGroundBlockHnadle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/fBrickBlock.png", 2, 2, 1, 32, 32, fBrickBlockHandle);
 	if (fBrickBlockHandle[0] == -1)
 	{
 		printfDx("ERROR:fBrickBlockHandle");
+		return;
 	}
 	bGroundBlockHandle = LoadGraph("././Resource/Images/bGroundBlock.png");
 	if (bGroundBlockHandle == -1)
 	{
 		printfDx("ERROR:bGroundBlockHandle");
+		return;
 	}
 	bBrickBlockHandle = LoadGraph("././Resource/Images/bBrickBlock.png");
 	if (bBrickBlockHandle == -1)
 	{
 		printfDx("ERROR:bBrickBlockHandle");
+		return;
 	}
 	unBreakBlockHandle = LoadGraph("././Resource/Images/UnBreakBlock.png");
 	if (unBreakBlockHandle == -1)
 	{
 		printfDx("ERROR:unBreakBlockHandle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/QuestionBlock.png", 4, 4, 1, 32, 32, questionBlockHandle);
 	if (questionBlockHandle[0] == -1)
 	{
 		printfDx("ERROR:questionBlockHandle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/Coins_01.png", 3, 3, 1, 32, 32, fCoinHandle);
 	if (fCoinHandle[0] == -1)
 	{
 		printfDx("ERROR:fCoinHandle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/Coins_02.png", 3, 3, 1, 32, 32, bCoinHandle);
 	if (bCoinHandle[0] == -1)
 	{
 		printfDx("ERROR:bCoinHandle");
+		return;
 	}
 	mushroomHandle = LoadGraph("././Resource/Images/Mushroom.png");
 	if (mushroomHandle == -1)
 	{
 		printfDx("ERROR:mushroomHandle");
+		return;
 	}
 	oneUpMushroomHandle = LoadGraph("././Resource/Images/1UPMushroom.png");
 	if (oneUpMushroomHandle == -1)
 	{
 		printfDx("ERROR:oneUpMushroomHandle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/Star.png", 4, 4, 1, 32, 32, starHandle);
 	if (starHandle[0] == -1)
 	{
 		printfDx("ERROR:starHandle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/Goomba.png", 3, 3, 1, 32, 32, goombaHandle);
 	if (goombaHandle[0] == -1)
 	{
 		printfDx("ERROR:goombaHandle");
+		return;
 	}
 	LoadDivGraph("././Resource/Images/KoopaTroopa.png", 4, 4, 1, 32, 45, koopaTroopaHandle);
 	if (koopaTroopaHandle[0] == -1)
 	{
 		printfDx("ERROR:koopaTroopaHandle");
+		return;
 	}
 
-	printfDx("FINISH:LOADIMAGES");
+	printfDx("NONERROR");
 }
 
 void ImageManager::DeleteImages()

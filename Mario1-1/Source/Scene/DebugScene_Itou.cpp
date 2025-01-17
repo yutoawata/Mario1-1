@@ -6,6 +6,7 @@ DebugScene_Itou::DebugScene_Itou()
 	:SceneBase("DebugScene : Itou")
 {
 	ImageManager::LoadImages();
+
 	map -> CreateMap();
 }
 
@@ -29,6 +30,8 @@ SceneBase* DebugScene_Itou::Update() {
 //描画処理
 void DebugScene_Itou::Draw() {
 	DrawType();
+
+
 
 	//ゲーム内のオブジェクトの描画処理
 	ObjectManager::GetInstance()->Draw();
