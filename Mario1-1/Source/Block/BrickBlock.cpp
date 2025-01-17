@@ -13,7 +13,7 @@ BrickBlock::~BrickBlock()
 
 void BrickBlock::Update()
 {
-
+	BlockBase::Update();
 }
 
 void BrickBlock::Draw()

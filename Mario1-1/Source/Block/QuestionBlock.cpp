@@ -13,8 +13,10 @@ QuestionBlock::~QuestionBlock()
 
 void QuestionBlock::Update()
 {
+	BlockBase::Update();
+
 	timer += FPSManager::GetInstance()->GetDeltaTime();
-	if (timer > LOOP_TOTAL_TIME / LOOP_PATERN_VALUE)
+	if (timer > LOOP_TOTAL_TIME)
 	{
 		timer = 0.0f;
 		count++;
@@ -27,5 +29,5 @@ void QuestionBlock::Update()
 
 void QuestionBlock::Draw()
 {
-	DrawGraph(position.x, position.y, imageHandles[0], TRUE);
+	DrawGraph(position.x, position.y, imageHandles[loopPatern[count]], TRUE);
 }
