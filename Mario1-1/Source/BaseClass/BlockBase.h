@@ -1,5 +1,6 @@
 #pragma once
 #include "ObjectBase.h"
+#include "../Debug/DebugBlockMove.h"
 
 class BlockBase : public ObjectBase
 {
@@ -12,4 +13,8 @@ public:
 private:
 	// メンバ関数
 	void Move(); // スクロール処理
+
+	DebugBlockMove* debugMoveBlock = new DebugBlockMove();
+
+	Vector2 move_val; // 移動量
 };

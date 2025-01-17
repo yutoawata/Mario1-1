@@ -39,40 +39,40 @@ void Map::CreateMap()
 			case 1:
 			{
 				// 地面ブロック(表)
-				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetFGroundBlockHandle());
+				NormalBlock* fGroundBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetFGroundBlockHandle());
 				break;
 			}
 			case 2:
 			{
 				// 地面ブロック(裏)
-				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetBGroundBlockHandle());
+				NormalBlock* bGroundBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), ImageManager::GetBGroundBlockHandle());
 				break;
 			}
 			case 3:
 			{
 				// 非破壊ブロック
-				NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), 
+				NormalBlock* unBreakBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), 
 														   ImageManager::GetUnBreakBlockHandle());
 				break;
 			}
 			case 4:
 			{
 				// レンガ(アイテムなし・表・破壊可)
-				//BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
-				//												ImageManager::GetFBrickBlockHandle()[0]);
+				BreakBlock* breakBlock = new BreakBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+																ImageManager::GetFBrickBlockHandle()[0]);
 				break;
 			}
 			case 5:
 			{
 				// レンガ(アイテムなし・裏・非破壊)
-				//NormalBlock* normalBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
-				//										   ImageManager::GetBBrickBlockHandle());
+				NormalBlock* bBrickBlock = new NormalBlock(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+														   ImageManager::GetBBrickBlockHandle());
 				break;
 			}
 			case 6:
 			{
 				// レンガ(コイン・表)
-				BrickBlock* brickBlock = new BrickBlock(ImageManager::GetFBrickBlockHandle(),
+				BrickBlock* brickBlockCoin = new BrickBlock(ImageManager::GetFBrickBlockHandle(),
 														Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
 														ItemType::COIN, 5);
 				break;
@@ -80,7 +80,7 @@ void Map::CreateMap()
 			case 7:
 			{
 				// レンガ(スター・表)
-				BrickBlock* brickBlock = new BrickBlock(ImageManager::GetFBrickBlockHandle(),	
+				BrickBlock* brickBlockStar = new BrickBlock(ImageManager::GetFBrickBlockHandle(),	
 														Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
 														ItemType::STAR);
 				break;
@@ -88,7 +88,7 @@ void Map::CreateMap()
 			case 8:
 			{
 				// ?(コイン) 
-				QuestionBlock* questionBlock = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
+				QuestionBlock* questionBlockCoin = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
 																 Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
 																 ItemType::COIN);
 				break;
@@ -96,7 +96,7 @@ void Map::CreateMap()
 			case 9:
 			{
 				// ?(キノコ)
-				QuestionBlock* questionBlock = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
+				QuestionBlock* questionBlockMashroom = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
 																 Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
 																 ItemType::MASHROOM);
 				break;
@@ -104,6 +104,9 @@ void Map::CreateMap()
 			case 10:
 			{
 				// ?(フラワー)
+				QuestionBlock* questionBlockFlower = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
+					Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+					ItemType::FIRE_FLOWER);
 				break;
 			}
 			case 11:
