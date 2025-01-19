@@ -17,10 +17,10 @@ Mario::Mario(Vector2 position_)
 	, moveSpeed(2), currentState(new NormalState(*this)) {
 	length = Vector2(32, 32);
 	LoadDivGraph("././Resource/Images/NormalMario.png", 9, 3, 3, 32, 32, normalImageHandle);
-	LoadDivGraph("././Resouece/Images/SuperMario.png", 9, 3, 3, 32, 32, superImageHandle);
-	LoadDivGraph("././Resouece/Images/FireMario.png", 9, 3, 3, 32, 32, FireImageHandle);
+	LoadDivGraph("././Resource/Images/SuperMario.png", 9, 3, 3, 32, 64, superImageHandle);
+	LoadDivGraph("././Resource/Images/FireMario.png", 9, 3, 3, 32, 64, FireImageHandle);
 	currentState->GetImageHandle(handle);
-	currentAnim = idle;
+	ChangeAnim(idle);
 }
 
 //デストラクタ
@@ -32,28 +32,23 @@ Mario::~Mario() {
 
 //更新処理
 void Mario::Update() {
-	currentAnim = idle;
+	bool isAction = false;
 	isDamage = false;
 
-	Move();
-	Jump();
+	isAction = Move() || Jump();
 
-	if (CheckHitKey(KEY_INPUT_M)) {
-		currentAnim = run;
+	if (!isAction) {
+		ChangeAnim(idle);
+		DrawCircle(30, 200, 5, GetColor(255, 255, 255), TRUE);
 	}
-	else if (CheckHitKey(KEY_INPUT_1)) {
-		delete currentState;
-		position.y += length.y;
-		currentState = new NormalState(*this);
+	if (CheckHitKey(KEY_INPUT_1)) {
+		ChangeState(StateType::NORMAL);
 	}
 	else if (CheckHitKey(KEY_INPUT_2)) {
-		delete currentState;
-		position.y += length.y;
-		currentState = new SuperState(*this);
+		ChangeState(StateType::SUPER);
 	}
 	else if (CheckHitKey(KEY_INPUT_3)) {
-		delete currentState;
-		currentState = new FireState(*this);
+		ChangeState(StateType::FIRE);
 	}
 	position.y += 5;
 }
@@ -81,7 +76,10 @@ void Mario::Draw() {
 		DrawGraph(position.x, position.y, handle[currentAnim.first + imageNum], TRUE);
 	}
 	
-	//DrawFillBox(position.x, position.y, position.x + length.x, position.y + length.y, GetColor(255, 0, 0));
+	DrawCollider();
+	DrawFormatString(10, 100, GetColor(255, 0, 0), "%d", length.x);
+	DrawFormatString(10, 130, GetColor(255, 0, 0), "%d", length.y);
+	//DrawBox(position.x, position.y, position.x + length.x, position.y + length.y, GetColor(255, 0, 255),FALSE);
 }
 
 //衝突時の処理
@@ -91,14 +89,16 @@ void Mario::OnCollision(const CollideResult& result_) {
 	if (result_.GetCollideObject().GetTag() == "Block" && result_.IsBottomCollide()) {
 		isJump = false;
 	}
-	else {
-		//敵オブジェクトに衝突すれば
-		if (result_.GetCollideObject().GetTag() == "Enemy") {
-			isDamage = true;
-		}
-
-		//形態遷移処理(衝突相手のタグから判別)
-		currentState = currentState->ChangeState(result_.GetCollideObject().GetTag());
+	//敵オブジェクトに衝突すれば
+	else if (result_.GetCollideObject().GetTag() == "Enemy" 
+		&& (result_.IsLeftCollide() || result_.IsRightCollide() || result_.IsUpCollide())) {
+		isDamage = true;
+	}
+	else if (result_.GetCollideObject().GetTag() == "Mashroom") {
+		ChangeState(StateType::SUPER);
+	}
+	else if (result_.GetCollideObject().GetTag() == "FireFlower") {
+		ChangeState(StateType::FIRE);
 	}
 
 	if (result_.IsUpCollide()) {
@@ -117,19 +117,21 @@ void Mario::OnCollision(const CollideResult& result_) {
 }
 
 //移動処理
-void Mario::Move() {
-
+bool Mario::Move() {
+	bool isMove = false;
 	scrollValue = 0;
 
 	//座標移動処理
 	if (Input::GetInstance().GetInputDirectionButtonLeft()) {
 		position.x -= moveSpeed;
-		currentAnim = run;
+		ChangeAnim(run);
 		isTurn = true;
+		isMove = true;
 	}
 	else if (Input::GetInstance().GetInputDirectionButtonRight()) {
+		ChangeAnim(run);
 		isTurn = false;
-		currentAnim = run;
+		isMove = true;
 
 		if (position.x >= GameManager::SCREEN_WIDTH / 2) {
 			scrollValue++;
@@ -138,10 +140,17 @@ void Mario::Move() {
 			position.x += moveSpeed;
 		}
 	}
+
+	if (CheckHitKey(KEY_INPUT_M)) {
+		ChangeAnim(run);
+		isMove = true;
+	}
+
+	return isMove;
 }
 
 //ジャンプ処理
-void Mario::Jump() {
+bool Mario::Jump() {
 	static int jumpPower = 0;
 
 	if (Input::GetInstance().GetInputLeftButton() && !isJump) {
@@ -150,38 +159,77 @@ void Mario::Jump() {
 	}
 
 	if (isJump) {
-		currentAnim = jump;
+		ChangeAnim(jump);
 		position.y += jumpPower;
 		jumpPower++;
+		return true;
 	}
+
+	return false;
 }
 
 //しゃがみ処理
-void Mario::Squat() {
-	length.x /= 2;//しゃがみ状態では高さが1/2
+bool Mario::Squat() {
+	//length.x /= 2;//しゃがみ状態では高さが1/2
+
+	return false;
 }
 
+//形態遷移処理
+void Mario::ChangeState(StateType state_tag) {
+	
+	if (state_tag == StateType::NORMAL) {
+		if (currentState->GetTag() != "Normal") {
+			position.y += 25;
+		}
+		delete currentState;
+		currentState = new NormalState(*this);
+	}
+	else if (state_tag == StateType::SUPER) {
+		if (currentState->GetTag() == "Normal") {
+			position.y -= 35;
+		}
+		delete currentState;
+		currentState = new SuperState(*this);
+	}
+	else if (state_tag == StateType::FIRE) {
+		if (currentState->GetTag() == "Normal") {
+			position.y -= 35;
+		}
+		delete currentState;
+		currentState = new FireState(*this);
+	}
+	currentState->GetImageHandle(handle);
+	//形態遷移後の大きさに合わせたColliderのサイズにする
+	GetGraphSize(handle[0], &length.x, &length.y);
+}
+
+//アニメーション遷移処理
+void Mario::ChangeAnim(std::pair<int, int> anim_) {
+	//現在のアニメーションと変更後が同じなら処理を抜ける
+	if (currentAnim == anim_) {
+		return;
+	}
+
+	//アニメーションを変更
+	currentAnim = anim_;
+	imageNum = 0;
+}
+
+//アニメーション再生処理
 void Mario::PlayAnimation() {
 	static float timer = 0.0f;
 	static bool isAdd = true;
 	timer += FPSManager::GetInstance()->GetDeltaTime();
 
 	if (timer >= animInterval) {
-		if (isAdd) {
-			imageNum++;
-			if (imageNum >= currentAnim.second) {
-				isAdd = false;
-				imageNum--;
-			}
-			
-		}
-		else {
-			imageNum--;
-			if (imageNum < 0) {
-				isAdd = true;
-				imageNum++;
-			}
+		imageNum++;
+		if (imageNum >= currentAnim.second) {
+			imageNum = 0;
 		}
 		timer = 0.0f;
 	}
+
+	DrawFormatString(10, 180, GetColor(255, 255, 255), "%d", currentAnim.second);
+	DrawFormatString(10, 200, GetColor(255, 255, 255), "%d", imageNum);
 }

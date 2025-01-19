@@ -4,7 +4,7 @@
 
 //コンストラクタ
 SuperState::SuperState(Mario& holder_)
-	: StateBase(holder_, holder_.superImageHandle) {
+	: StateBase(holder_, holder_.superImageHandle, "Super") {
 
 }
 
@@ -12,17 +12,7 @@ SuperState::SuperState(Mario& holder_)
 SuperState::~SuperState() {}
 
 //更新処理
-StateBase* SuperState::ChangeState(std::string item_type) {
-	if (this->holder.IsDamage()) {
-		Mario& h = this->holder;
-		delete this;
-		return new NormalState(h);
-	}
-
-	return this;
-}
-
-
 void SuperState::Update() {
+	currentAnim = holder.GetAnim();
 	this->holder.Squat();
 }

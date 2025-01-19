@@ -5,13 +5,13 @@
 #include "..\Input\Input.h"
 #include "..\Mario\Mario.h"
 
-class DebugObject02 : public ObjectBase {
+class DebugObject : public ObjectBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	DebugObject02();
+	DebugObject(Vector2 position_, std::string tag_, int width_, int height_);
 	//デストラクタ
-	~DebugObject02();
+	~DebugObject();
 
 	void Update() override;
 	void Draw() override;

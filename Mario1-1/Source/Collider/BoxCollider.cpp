@@ -18,9 +18,7 @@ BoxCollider::~BoxCollider() {}
 
 void BoxCollider::DrawCollider() {
 	Vector2 rightBottomPosition = leftUpPosition + length;
-	DrawFillBox(leftUpPosition.x, leftUpPosition.y, rightBottomPosition.x, rightBottomPosition.y, GetColor(255, 0, 0));
-	DrawCircle(GetLeftUpPosition().x, GetLeftUpPosition().y, 10, GetColor(255, 255, 255), TRUE);
-	DrawCircle(GetRightBottomPosition().x, GetRightBottomPosition().y, 10, GetColor(255, 255, 255), TRUE);
+	DrawBox(leftUpPosition.x, leftUpPosition.y, rightBottomPosition.x, rightBottomPosition.y, GetColor(255, 0, 0), FALSE);
 }
 
 //è’ìÀèàóù

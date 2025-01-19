@@ -8,6 +8,12 @@
 class StateBase;
 
 class Mario : public ObjectBase {
+	enum class StateType {
+		NORMAL,
+		SUPER,
+		FIRE
+	};
+
 	//メンバ関数
 public:
 	//コンストラクタ
@@ -29,13 +35,17 @@ public:
 	void OnCollision(const CollideResult& result_) override;
 	
 	//移動処理
-	void Move();
+	bool Move();
 	//ジャンプ処理
-	void Jump();
+	bool Jump();
 	//しゃがみ処理
-	void Squat();
+	bool Squat();
 	//アニメーション再生処理
 	void PlayAnimation();
+	//アニメーション遷移処理
+	void ChangeAnim(std::pair<int, int> anim_);
+	//形態遷移処理
+	void ChangeState(StateType state_tag);
 
 	static int normalImageHandle[9];
 	static int superImageHandle[9];
@@ -45,6 +55,7 @@ public:
 	static int scrollValue;				//画面スクロールの移動量
 private:
 	int handle[9];						//画像素材のハンドルの配列
+
 	//アニメーション画像の番号(first:アニメーションの先頭要素番号/second:画像枚数)
 	std::pair<int, int> currentAnim;	//現在のアニメーション情報
 	std::pair<int, int> idle  = { 0, 1 };//待機状態の情報
@@ -52,6 +63,7 @@ private:
 	std::pair<int, int> jump  = { 1, 1 };//ジャンプ状態の情報
 	std::pair<int, int> die   = { 2, 1 };//ゲームオーバー状態の情報
 	std::pair<int, int> goal  = { 6, 2 };//ゲームクリア状態の情報
+	//-----------------------------------------------------------------------------
 	StateBase* currentState;			//現在の形態
 	int imageNum = 0;					//現在再生中の画像の番号
 	int moveSpeed = 10;					//移動速度
