@@ -7,7 +7,7 @@ class BrickBlock : public ItemBlockBase
 public:
 	// メンバ関数
 
-	BrickBlock(int* handle_, Vector2 position_, ItemType item_type, int item_value = 1); // コンストラクタ
+	BrickBlock(int* handle_, Vector2 position_, ItemType item_type, int item_value = 1, bool is_visible); // コンストラクタ
 	~BrickBlock(); // デストラクタ
 	void Update() override; // 更新処理
 	void Draw() override; // 描画処理
@@ -19,4 +19,5 @@ private:
 
 	// メンバ変数
 	int* imageHandles; // 画像ハンドルの保存変数
+	bool isVisible; // 通常時の描画フラグ
 };
