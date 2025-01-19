@@ -151,6 +151,7 @@
     <ClCompile Include="Source\ManagerClass\ImageManager.cpp" />
     <ClCompile Include="Source\ManagerClass\ObjectManager.cpp" />
     <ClCompile Include="Source\Map\Map.cpp" />
+    <ClCompile Include="Source\Mario\Ball\FireBall.cpp" />
     <ClCompile Include="Source\Mario\Mario.cpp" />
     <ClCompile Include="Source\Mario\State\NormalState.cpp" />
     <ClCompile Include="Source\Mario\State\SuperState.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Source\ManagerClass\ImageManager.h" />
     <ClInclude Include="Source\ManagerClass\ObjectManager.h" />
     <ClInclude Include="Source\Map\Map.h" />
+    <ClInclude Include="Source\Mario\Ball\FireBall.h" />
     <ClInclude Include="Source\Mario\Mario.h" />
     <ClInclude Include="Source\Mario\State\NormalState.h" />
     <ClInclude Include="Source\Mario\State\SuperState.h" />

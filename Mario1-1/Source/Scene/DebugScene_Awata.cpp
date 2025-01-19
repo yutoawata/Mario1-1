@@ -3,25 +3,26 @@
 #include "..\ManagerClass\FPSManager.h"
 
 //コンストラクタ
-DebugObject02::DebugObject02()
-	: ObjectBase(Vector2(0, 450), "Block", 520, 30) {}
+DebugObject::DebugObject(Vector2 position_, std::string tag_, int width_, int height_)
+	: ObjectBase(position_, tag_, width_, height_) {}
 //デストラクタ
-DebugObject02::~DebugObject02() {}
+DebugObject::~DebugObject() {}
 
-void DebugObject02::Update() {}
-void DebugObject02::Draw() {
+void DebugObject::Update() {}
+void DebugObject::Draw() {
 	DrawCollider();
 }
 
 //コンストラクタ
 DebugScene_Awata::DebugScene_Awata()
 	: SceneBase("DebugScene : Awata") {
-	DebugObject02* object02 = new DebugObject02();
+	DebugObject* object01 = new DebugObject(Vector2(0, 450), "Block", 450, 20);
+	DebugObject* object02 = new DebugObject(Vector2(200, 400), "FireFlower", 30, 30);
 	Input::CreateInstance();
 	Input::GetInstance().SetUpJoypadInput(DX_PADTYPE_DUAL_SENSE);
 }
 
-void DebugObject02::OnCollision(const CollideResult& other_) {
+void DebugObject::OnCollision(const CollideResult& other_) {
 	DrawCircle(100, 100, 20, GetColor(0, 0, 255), TRUE);
 	
 }

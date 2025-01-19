@@ -37,4 +37,5 @@ private:
 	Vector2& leftUpPosition;//オブジェクトの原点座標(左上)
 	Vector2 latePosition;	//移動前の座標
 	Vector2 moveVector;		//移動ベクトル
+	bool isCollide = false;	//当たり判定フラグ
 };

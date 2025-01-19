@@ -4,27 +4,12 @@
 
 //コンストラクタ
 NormalState::NormalState(Mario& holder_)
-	: StateBase(holder_, holder_.normalImageHandle) {}
+	: StateBase(holder_, holder_.normalImageHandle, "Normal") {}
 
 //デストラクタ
 NormalState::~NormalState() {}
 
 //更新処理
-StateBase* NormalState::ChangeState(std::string item_type) {
-	if (this->holder.IsDamage()) {
-		delete this;
-		return nullptr;
-	}
-
-	if (item_type == "FireFlower") {
-		Mario& holder = this->holder;
-		delete this;
-		return new FireState(holder);
-	}
-	
-	return this;
-}
-
 void NormalState::Update() {
-	this->currentAnim = this->holder.GetAnim();
+	currentAnim = holder.GetAnim();
 }

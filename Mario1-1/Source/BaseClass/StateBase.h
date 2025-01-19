@@ -9,7 +9,7 @@ class StateBase {
 	//メンバ関数
 public:
 	//コンストラクタ
-	StateBase(Mario& holder_, int* handle_);
+	StateBase(Mario& holder_, int* handle_, std::string tag_);
 	//デストラクタ
 	virtual ~StateBase();
 
@@ -17,8 +17,9 @@ public:
 
 	void GetImageHandle(int* handle_);
 	std::pair<int, int> GetCurrentAnim() { return currentAnim; }
+	std::string GetTag() { return tag; }
 
-	virtual StateBase* ChangeState(std::string item_type) = 0;
+	//更新処理
 	virtual void Update() = 0;
 
 private:
@@ -29,4 +30,5 @@ protected:
 	Mario& holder;
 	//アニメーション画像の番号(first:アニメーションの先頭要素番号/second:画像枚数)
 	std::pair<int, int> currentAnim;	//現在のアニメーション情報
+	std::string tag;
 };

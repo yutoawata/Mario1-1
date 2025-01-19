@@ -4,25 +4,21 @@
 //コンストラクタ
 
 FireState::FireState(Mario& holder_)
-	: StateBase(holder_, holder_.FireImageHandle) {}
+	: StateBase(holder_, holder_.FireImageHandle, "Fire") {}
 
 //デストラクタ
 FireState::~FireState() {}
 
 
 //更新処理
-StateBase* FireState::ChangeState(std::string item_type) {
-	//ダメージによる形態遷移
-	if (this->holder.IsDamage()) {
-		Mario& h = this->holder;
-		delete this;
-		return new SuperState(h);
-	}
-
-	return this;
+void FireState::Update() {
+	currentAnim = holder.GetAnim();
+	holder.Squat();
 }
 
+//
+void FireState::ShrowFireBall() {
+	if (Input::GetInstance().GetInputDownButton()) {
 
-void FireState::Update() {
-	holder.Squat();
+	}
 }
