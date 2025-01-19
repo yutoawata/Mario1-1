@@ -1,7 +1,7 @@
 #include "BrickBlock.h"
 
-BrickBlock::BrickBlock(int* handle_, Vector2 position_, ItemType item_type, int item_value) 
-	: ItemBlockBase(handle_,position_,item_type,item_value),imageHandles(handle_)
+BrickBlock::BrickBlock(int* handle_, Vector2 position_, ItemType item_type, int item_value, bool is_visible) 
+	: ItemBlockBase(handle_,position_,item_type,item_value),imageHandles(handle_),isVisible(is_visible)
 {
 	
 }
@@ -22,7 +22,7 @@ void BrickBlock::Draw()
 	{
 		DrawGraph(position.x, position.y, imageHandles[1], TRUE);
 	}
-	else
+	else if(isVisible)
 	{
 		DrawGraph(position.x, position.y, imageHandles[0], TRUE);
 	}
