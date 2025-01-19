@@ -16,6 +16,8 @@ GameManager::GameManager() {
 	//マウスカーソルの表示をOFF
 	SetMouseDispFlag(FALSE);
 	SetDrawScreen(DX_SCREEN_BACK);
+
+	SetBackgroundColor(173, 189, 236);
 }
 
 //デストラクタ
