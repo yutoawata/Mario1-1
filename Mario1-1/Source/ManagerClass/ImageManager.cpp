@@ -12,7 +12,9 @@ int ImageManager::questionBlockHandle[4] = { 0,0,0,0 };
 int ImageManager::fPypeHandle[4] = { 0,0,0,0 };
 int ImageManager::bPypeHandle[6] = { 0,0,0,0,0,0 };
 int ImageManager::fortHandle[25] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
+int ImageManager::fortFlagHandle = 0;
 int ImageManager::poleHandle[2] = { 0,0 };
+int ImageManager::flagHandle = 0;
 
 // アイテム系
 int ImageManager::fCoinHandle[3] = { 0,0,0 };
@@ -23,6 +25,8 @@ int ImageManager::starHandle[4] = { 0,0,0,0 };
 
 // キャラクター系
 int ImageManager::normalMarioHandle[9] = { 0,0,0,0,0,0,0,0,0 };
+int ImageManager::superMarioHandle[9] = { 0,0,0,0,0,0,0,0,0 };
+int ImageManager::fireMarioHandle[9] = { 0,0,0,0,0,0,0,0,0 };
 int ImageManager::goombaHandle[3] = { 0,0,0 };
 int ImageManager::koopaTroopaHandle[4] = { 0,0,0,0 };
 
@@ -85,10 +89,22 @@ void ImageManager::LoadImages()
 		printfDx("ERROR:fortHandle");
 		return;
 	}
-	LoadDivGraph("././Resource/Images/Pole.png", 2, 2, 1, 32, 32, poleHandle);
+	fortFlagHandle = LoadGraph("././Resource/Images/FortFlag.png");
+	if (fortFlagHandle == -1)
+	{
+		printfDx("ERROR:fortFlagHandle");
+		return;
+	}
+	LoadDivGraph("././Resource/Images/Pole.png",2,1,2,32,32, poleHandle);
 	if (poleHandle[0] == -1)
 	{
 		printfDx("ERROR:poleHandle");
+		return;
+	}
+	flagHandle = LoadGraph("././Resource/Images/Flag.png");
+	if (flagHandle == -1)
+	{
+		printfDx("ERROR:flagHandle");
 		return;
 	}
 
@@ -131,6 +147,18 @@ void ImageManager::LoadImages()
 		printfDx("ERROE:normalMarioHandle");
 		return;
 	}
+	LoadDivGraph("././Resource/Images/SuperMario.png", 9, 3, 3, 32, 32, superMarioHandle);
+	if (superMarioHandle[0] == -1)
+	{
+		printfDx("ERROE:superMarioHandle");
+		return;
+	}
+	LoadDivGraph("././Resource/Images/FireMario.png", 9, 3, 3, 32, 32, fireMarioHandle);
+	if (fireMarioHandle[0] == -1)
+	{
+		printfDx("ERROE:fireMarioHandle");
+		return;
+	}
 	LoadDivGraph("././Resource/Images/Goomba.png", 3, 3, 1, 32, 32, goombaHandle);
 	if (goombaHandle[0] == -1)
 	{
@@ -161,7 +189,9 @@ void ImageManager::DeleteImages()
 	DeleteImageArray(fPypeHandle, 4);
 	DeleteImageArray(bPypeHandle, 6);
 	DeleteImageArray(fortHandle, 25);
+	DeleteGraph(fortFlagHandle);
 	DeleteImageArray(poleHandle, 2);
+	DeleteGraph(flagHandle);
 
 
 	// アイテム系
@@ -173,6 +203,8 @@ void ImageManager::DeleteImages()
 
 	// キャラクター系
 	DeleteImageArray(normalMarioHandle, 9);
+	DeleteImageArray(superMarioHandle, 9);
+	DeleteImageArray(fireMarioHandle, 9);
 	DeleteImageArray(goombaHandle, 3);
 	DeleteImageArray(koopaTroopaHandle, 4);
 }
