@@ -170,6 +170,7 @@ void ImageManager::DeleteImages()
 	DeleteGraph(mushroomHandle);
 	DeleteGraph(oneUpMushroomHandle);
 	DeleteImageArray(starHandle, 4);
+
 	// キャラクター系
 	DeleteImageArray(normalMarioHandle, 9);
 	DeleteImageArray(goombaHandle, 3);
