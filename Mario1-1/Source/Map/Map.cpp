@@ -74,7 +74,8 @@ void Map::CreateMap()
 				// レンガ(コイン・表)
 				BrickBlock* brickBlockCoin = new BrickBlock(ImageManager::GetFBrickBlockHandle(),
 														Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
-														ItemType::COIN, 5);
+														ItemType::COIN, 5,
+														true);
 				break;
 			}
 			case 7:
@@ -82,7 +83,8 @@ void Map::CreateMap()
 				// レンガ(スター・表)
 				BrickBlock* brickBlockStar = new BrickBlock(ImageManager::GetFBrickBlockHandle(),	
 														Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
-														ItemType::STAR);
+														ItemType::STAR,1,
+														true);
 				break;
 			}
 			case 8:
@@ -105,13 +107,17 @@ void Map::CreateMap()
 			{
 				// ?(フラワー)
 				QuestionBlock* questionBlockFlower = new QuestionBlock(ImageManager::GetQuestionBlockHandle(),
-					Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
-					ItemType::FIRE_FLOWER);
+																	   Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+																	   ItemType::FIRE_FLOWER);
 				break;
 			}
 			case 11:
 			{
 				// 透明(1UP)
+				BrickBlock* hiddenBlockOneUpMashroom = new BrickBlock(ImageManager::GetFBrickBlockHandle(),
+																	  Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+																	  ItemType::ONEUP_MASHROOM,1,
+																	  false);
 				break;
 			}
 			case 12:
