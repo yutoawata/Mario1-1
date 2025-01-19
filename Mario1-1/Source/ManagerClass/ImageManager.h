@@ -25,7 +25,9 @@ public:
 	static int* GetFPypeHandle() { return fPypeHandle; }
 	static int* GetbPypeHandle() { return bPypeHandle; }
 	static int* GetFortHandle() { return fortHandle; }
+	static int GetFortFlagHandle() { return fortFlagHandle; }
 	static int* GetPolehandle() { return poleHandle; }
+	static int GetFlagHandle() { return flagHandle; }
 
 	// アイテム系
 	static int* GetFCoinHandle() { return fCoinHandle; }
@@ -36,6 +38,8 @@ public:
 	
 	// キャラクター系
 	static int* GetNormalMarioHandle() { return normalMarioHandle; }
+	static int* GetSuperMarioHandle() { return superMarioHandle; }
+	static int* GetFiremarioHandle() { return fireMarioHandle; }
 	static int* GetGoombaHandle() { return goombaHandle; }
 	static int* GetKoopaTroopaHandle(){ return koopaTroopaHandle; }
 
@@ -53,22 +57,27 @@ private:
 	static int bBrickBlockHandle;		// 裏面用レンガブロック画像保存ハンドル
 	static int unBreakBlockHandle;		// 非破壊ブロック保存ハンドル
 	static int questionBlockHandle[4];  // ？ブロック保存ハンドル
-	static int fCoinHandle[3];			// 表面用コイン画像保存ハンドル
-	static int bCoinHandle[3];			// 裏面用コイン画像保存ハンドル
 
 	// マップオブジェクト系
 	static int fPypeHandle[4];			// 表面用土管画像保存ハンドル
 	static int bPypeHandle[6];			// 裏面用土管画像保存ハンドル
 	static int fortHandle[25];			// 砦画像保存ハンドル
+	static int fortFlagHandle;			// 砦フラッグ画像保存ハンドル
 	static int poleHandle[2];			// ゴールポール画像保存ハンドル
+	static int flagHandle;				// ゴールフラッグ画像保存ハンドル
+
 
 	// アイテム系
+	static int fCoinHandle[3];			// 表面用コイン画像保存ハンドル
+	static int bCoinHandle[3];			// 裏面用コイン画像保存ハンドル
 	static int mushroomHandle;			// キノコ画像保存ハンドル
 	static int oneUpMushroomHandle;		// 1UPキノコ画像保存ハンドル
 	static int starHandle[4];			// スター画像保存ハンドル
 
 	// キャラクター系
 	static int normalMarioHandle[9];			// ミニマリオ画像保存ハンドル
+	static int superMarioHandle[9];				// デカマリオ画像保存ハンドル
+	static int fireMarioHandle[9];				// ファイアマリオ画像保存ハンドル
 	static int goombaHandle[3];			// クリボー画像保存ハンドル
 	static int koopaTroopaHandle[4];	// ノコノコ画像保存ハンドル
 };
