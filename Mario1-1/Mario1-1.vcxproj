@@ -144,7 +144,6 @@
     <ClCompile Include="Source\Block\QuestionBlock.cpp" />
     <ClCompile Include="Source\Collider\BoxCollider.cpp" />
     <ClCompile Include="Source\Collider\CollideResult.cpp" />
-    <ClCompile Include="Source\Debug\DebugBlockMove.cpp" />
     <ClCompile Include="Source\GameMain\GameManager.cpp" />
     <ClCompile Include="Source\GameMain\Main.cpp" />
     <ClCompile Include="Source\Input\Input.cpp" />
@@ -157,6 +156,7 @@
     <ClCompile Include="Source\Mario\State\SuperState.cpp" />
     <ClCompile Include="Source\Mario\State\FireState.cpp" />
     <ClCompile Include="Source\Math\Vector2.cpp" />
+    <ClCompile Include="Source\Move_D\DebugBlockMove.cpp" />
     <ClCompile Include="Source\Scene\DebugScene_Awata.cpp" />
     <ClCompile Include="Source\Scene\DebugScene_Itou.cpp" />
     <ClCompile Include="Source\Scene\PlayScene.cpp" />
@@ -175,7 +175,6 @@
     <ClInclude Include="Source\Block\QuestionBlock.h" />
     <ClInclude Include="Source\Collider\BoxCollider.h" />
     <ClInclude Include="Source\Collider\CollideResult.h" />
-    <ClInclude Include="Source\Debug\DebugBlockMove.h" />
     <ClInclude Include="Source\GameMain\GameManagerh.h" />
     <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Item\ItemType.h" />
@@ -188,6 +187,7 @@
     <ClInclude Include="Source\Mario\State\SuperState.h" />
     <ClInclude Include="Source\Mario\State\FireState.h" />
     <ClInclude Include="Source\Math\Vector2.h" />
+    <ClInclude Include="Source\Move_D\DebugBlockMove.h" />
     <ClInclude Include="Source\Scene\DebugScene_Awata.h" />
     <ClInclude Include="Source\Scene\DebugScene_Itou.h" />
     <ClInclude Include="Source\Scene\DebugScene_Monda.h" />
