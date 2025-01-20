@@ -12,11 +12,11 @@ Flag::~Flag()
 
 void Flag::Update()
 {
-	// position += Mario::GetScrollValue();
-	position += MoveValueManager::GetMoveValue();
+	position += Mario::GetScrollValue();
+	//position += MoveValueManager::GetMoveValue();
 }
 
 void Flag::Draw()
 {
-	DrawGraph(position.x + 11, position.y + 10, imageHandle,TRUE);
+	DrawGraph(position.x + 15, position.y + 15, imageHandle,TRUE);
 }

@@ -12,8 +12,8 @@ Pype::~Pype()
 
 void Pype::Update()
 {
-	// position += Mario::GetScrollValue();
-	position += MoveValueManager::GetMoveValue();
+	position += Mario::GetScrollValue();
+	//position += MoveValueManager::GetMoveValue();
 }
 
 void Pype::Draw()
