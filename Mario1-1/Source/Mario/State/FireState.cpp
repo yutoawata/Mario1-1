@@ -4,7 +4,7 @@
 //コンストラクタ
 
 FireState::FireState(Mario& holder_)
-	: StateBase(holder_, holder_.FireImageHandle, "Fire") {}
+	: StateBase(holder_, ImageManager::GetFiremarioHandle(), "Fire") {}
 
 //デストラクタ
 FireState::~FireState() {}

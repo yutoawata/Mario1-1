@@ -9,7 +9,7 @@ int Mario::normalImageHandle[9] = {};
 int Mario::superImageHandle[9] = {};
 int Mario::FireImageHandle[9] = {};
 
-int Mario::scrollValue = 0;
+Vector2 Mario::scrollValue = Vector2::ZERO;
 
 //コンストラクタ
 Mario::Mario(Vector2 position_)
@@ -121,7 +121,7 @@ void Mario::OnCollision(const CollideResult& result_) {
 bool Mario::Move() {
 	static float timer = 0.0f;
 	bool isMove = false;
-	scrollValue = 0;
+	scrollValue = Vector2::ZERO;
 
 	//座標移動処理
 	if (Input::GetInstance().GetInputDirectionButtonLeft()) {
@@ -145,7 +145,7 @@ bool Mario::Move() {
 
 	//画面中央または移動量がマイナスならば
 	if (position.x >= GameManager::SCREEN_WIDTH / 2 && moveSpeed > 0) {
-		scrollValue += moveSpeed;
+		scrollValue.x += moveSpeed;
 	}
 	else {
 		position.x += moveSpeed;

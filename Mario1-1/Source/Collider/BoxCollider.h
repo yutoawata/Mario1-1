@@ -25,6 +25,8 @@ public:
 	int GetWidth() const { return length.x; }
 	//縦幅を渡す
 	int GetHeigth() const { return length.y; }
+	//当たり判定を行うかのフラグを渡す
+	bool IsCollide() const { return isCollide; }
 
 	void DrawCollider();
 	bool Collide(BoxCollider& other_);
@@ -37,5 +39,5 @@ private:
 	Vector2& leftUpPosition;//オブジェクトの原点座標(左上)
 	Vector2 latePosition;	//移動前の座標
 	Vector2 moveVector;		//移動ベクトル
-	bool isCollide = false;	//当たり判定フラグ
+	bool isCollide = true;	//当たり判定フラグ
 };

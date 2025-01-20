@@ -21,7 +21,7 @@ public:
 	//デストラクタ
 	~Mario();
 
-	static int GetScrollValue() { return scrollValue; }
+	static Vector2 GetScrollValue() { return scrollValue; }
 	int* GetHandle() { return handle; }
 	std::pair<int, int> GetAnim() { return currentAnim; }
 	bool IsDamage() const { return isDamage; }
@@ -54,7 +54,7 @@ public:
 
 	static const int SPEED_LIMIT = 5;
 	static const int JUMP_POWER = 20;	//ジャンプする力
-	static int scrollValue;				//画面スクロールの移動量
+	static Vector2 scrollValue;			//画面スクロールの移動量
 private:
 	int handle[9];						//画像素材のハンドルの配列
 
