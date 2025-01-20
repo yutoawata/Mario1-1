@@ -17,7 +17,7 @@ void BlockBase::Update()
 
 void BlockBase::Move()
 {
-	// move_val = Mario::GetScrollValue();
-	move_val = MoveValueManager::GetMoveValue();
+	move_val = Mario::GetScrollValue();
+	//move_val = MoveValueManager::GetMoveValue();
 	position += move_val;
 }

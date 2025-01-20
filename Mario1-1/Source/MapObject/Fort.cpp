@@ -12,8 +12,8 @@ Fort::~Fort()
 
 void Fort::Update()
 {
-	// position += Mario::GetScrollValue();
-	position += MoveValueManager::GetMoveValue();
+	position += Mario::GetScrollValue();
+	//position += MoveValueManager::GetMoveValue();
 }
 
 void Fort::Draw()
