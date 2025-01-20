@@ -1,6 +1,6 @@
 #pragma once
 #include "ObjectBase.h"
-#include "../Move_D/DebugBlockMove.h"
+#include "../Move_D/MoveValueManager.h"
 #include "../Mario/Mario.h"
 
 class BlockBase : public ObjectBase
@@ -14,8 +14,6 @@ public:
 private:
 	// メンバ関数
 	void Move(); // スクロール処理
-
-	DebugBlockMove* debugMoveBlock = new DebugBlockMove();
 
 	Vector2 move_val; // 移動量
 };

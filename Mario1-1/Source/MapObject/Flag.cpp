@@ -12,8 +12,8 @@ Flag::~Flag()
 
 void Flag::Update()
 {
-	debugBlockMove->Update();
-	position += debugBlockMove->GetMove_Val();
+	// position += Mario::GetScrollValue();
+	position += MoveValueManager::GetMoveValue();
 }
 
 void Flag::Draw()

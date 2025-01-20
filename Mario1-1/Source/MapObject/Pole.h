@@ -1,6 +1,7 @@
 #pragma once
 #include"../BaseClass/ObjectBase.h"
-#include "../Move_D/DebugBlockMove.h"
+#include "../Move_D/MoveValueManager.h"
+#include "../Mario/Mario.h"
 
 class Pole: public ObjectBase
 {
@@ -12,7 +13,5 @@ public:
 	void Draw() override;
 
 private:
-
-	DebugBlockMove* debugBlockMove = new DebugBlockMove();
 	int imageHandle;
 };

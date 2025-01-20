@@ -46,6 +46,8 @@ void DebugBlockMove::Input()
 		{
 			move_val.x = 0;
 		}
+
+		MoveValueManager::SetMoveValue(move_val);
 	}
 
 }

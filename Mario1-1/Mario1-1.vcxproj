@@ -161,6 +161,7 @@
     <ClCompile Include="Source\Mario\State\FireState.cpp" />
     <ClCompile Include="Source\Math\Vector2.cpp" />
     <ClCompile Include="Source\Move_D\DebugBlockMove.cpp" />
+    <ClCompile Include="Source\Move_D\MoveValueManager.cpp" />
     <ClCompile Include="Source\Scene\DebugScene_Awata.cpp" />
     <ClCompile Include="Source\Scene\DebugScene_Itou.cpp" />
     <ClCompile Include="Source\Scene\PlayScene.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="Source\Mario\State\FireState.h" />
     <ClInclude Include="Source\Math\Vector2.h" />
     <ClInclude Include="Source\Move_D\DebugBlockMove.h" />
+    <ClInclude Include="Source\Move_D\MoveValueManager.h" />
     <ClInclude Include="Source\Scene\DebugScene_Awata.h" />
     <ClInclude Include="Source\Scene\DebugScene_Itou.h" />
     <ClInclude Include="Source\Scene\DebugScene_Monda.h" />
