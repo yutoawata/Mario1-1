@@ -30,10 +30,12 @@ public:
 	bool GetInputRightButton() { return inputState.Buttons[rightButtonNum] != 0; }
 
 	//十字キーの左入力状態を渡す
-	bool GetInputDirectionButtonLeft() { return inputState.POV[0] == 22500 || inputState.POV[0] == 27000 || inputState.POV[0] == 31500; }
+	bool GetInputDirectionButtonLeft() { return inputState.POV[0] == 27000; }
 	//十字キーの右入力状態を渡す
-	bool GetInputDirectionButtonRight() { return inputState.POV[0] == 4500 || inputState.POV[0] == 9000 || inputState.POV[0] == 13500; }
-	
+	bool GetInputDirectionButtonRight() { return inputState.POV[0] == 9000; }
+	//十字キーの下入力状態を渡す
+	bool GetInputDirectionButtonDown(){return inputState.POV[0] == 18000; }
+
 	//外部参照用のインスタンスを生成
 	static void CreateInstance() { if (instance == nullptr)instance = new Input(); }
 	//外部参照用のインスタンスを削除

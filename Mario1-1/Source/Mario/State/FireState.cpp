@@ -13,7 +13,6 @@ FireState::~FireState() {}
 //XVˆ—
 void FireState::Update() {
 	currentAnim = holder.GetAnim();
-	holder.Squat();
 }
 
 //

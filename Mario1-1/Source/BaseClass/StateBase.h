@@ -2,6 +2,7 @@
 #include <utility>
 #include <string>
 #include "..\Mario\Mario.h"
+#include "../ManagerClass/ImageManager.h"
 
 class Mario;
 

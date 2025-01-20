@@ -14,5 +14,4 @@ SuperState::~SuperState() {}
 //XVˆ—
 void SuperState::Update() {
 	currentAnim = holder.GetAnim();
-	this->holder.Squat();
 }

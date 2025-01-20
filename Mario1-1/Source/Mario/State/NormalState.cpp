@@ -2,6 +2,7 @@
 #include "../../ManagerClass/FPSManager.h"
 #include "FireState.h"
 
+
 //コンストラクタ
 NormalState::NormalState(Mario& holder_)
 	: StateBase(holder_, holder_.normalImageHandle, "Normal") {}

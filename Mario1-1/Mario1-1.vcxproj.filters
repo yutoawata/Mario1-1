@@ -88,6 +88,9 @@
     <ClCompile Include="Source\Move_D\DebugBlockMove.cpp">
       <Filter>Debug</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mario\Ball\FireBall.cpp">
+      <Filter>Mario\Ball</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
@@ -177,6 +180,9 @@
     <ClInclude Include="Source\Move_D\DebugBlockMove.h">
       <Filter>Debug</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mario\Ball\FireBall.h">
+      <Filter>Mario\Ball</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="BaseClass">
@@ -196,9 +202,6 @@
     </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{064a26db-4b4e-4614-b8a8-a957b8a82cae}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Math">
-      <UniqueIdentifier>{31fcfab2-3cd9-4f20-8690-e6a92f117c58}</UniqueIdentifier>
     </Filter>
     <Filter Include="GameMain">
       <UniqueIdentifier>{3844ca4f-7b34-4d08-80ae-8db1e3cf9f13}</UniqueIdentifier>
@@ -220,6 +223,12 @@
     </Filter>
     <Filter Include="MapObject">
       <UniqueIdentifier>{6b5f46b0-0234-44b3-b7e5-59f9555d468e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mario\Ball">
+      <UniqueIdentifier>{c7af0ab3-2fa6-4ebe-a278-e8ecd65e16db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{31fcfab2-3cd9-4f20-8690-e6a92f117c58}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
