@@ -11,4 +11,7 @@ public:
 
 	//更新処理
 	void Update() override;
+
+private:
+	std::pair<int, int> squat = { 8, 1 };//しゃがみ状態のアニメーション情報
 };

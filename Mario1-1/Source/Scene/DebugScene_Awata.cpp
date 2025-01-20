@@ -4,9 +4,11 @@
 
 //コンストラクタ
 DebugObject::DebugObject(Vector2 position_, std::string tag_, int width_, int height_)
-	: ObjectBase(position_, tag_, width_, height_) {}
+	: ObjectBase(position_, tag_, width_, height_) {
+	ImageManager::LoadImages();
+}
 //デストラクタ
-DebugObject::~DebugObject() {}
+DebugObject::~DebugObject() { ImageManager::DeleteImages(); }
 
 void DebugObject::Update() {}
 void DebugObject::Draw() {
@@ -34,6 +36,15 @@ DebugScene_Awata::~DebugScene_Awata() {
 
 //更新処理
 SceneBase* DebugScene_Awata::Update() {
+	static float timer = 0.0f;
+	timer += FPSManager::GetInstance()->GetDeltaTime();
+
+	if (Input::GetInstance().GetInputRightButton()) {
+		if (timer >= 2.0f) {
+			FireBall* ball = new FireBall(Vector2(100, 400), true);
+			timer = 0.0f;
+		}
+	}
 	
 	Input::GetInstance().GetInputState();
 	//ゲーム内のオブジェクトの更新処理

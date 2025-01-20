@@ -14,7 +14,7 @@ int Mario::scrollValue = 0;
 //コンストラクタ
 Mario::Mario(Vector2 position_)
 	: ObjectBase(position_, 1, "Mario")
-	, moveSpeed(2), currentState(new NormalState(*this)) {
+	, moveSpeed(0), currentState(new NormalState(*this)) {
 	length = Vector2(32, 32);
 	LoadDivGraph("././Resource/Images/NormalMario.png", 9, 3, 3, 32, 32, normalImageHandle);
 	LoadDivGraph("././Resource/Images/SuperMario.png", 9, 3, 3, 32, 64, superImageHandle);
@@ -34,8 +34,9 @@ Mario::~Mario() {
 void Mario::Update() {
 	bool isAction = false;
 	isDamage = false;
+	DrawPosition = position;
 
-	isAction = Move() || Jump();
+	isAction = Move() || Jump() || Squat();
 
 	if (!isAction) {
 		ChangeAnim(idle);
@@ -69,11 +70,11 @@ void Mario::LateUpdate() {
 void Mario::Draw() {
 	if (isTurn) {
 		//左右反転描画
-		DrawTurnGraph(position.x, position.y, handle[currentAnim.first + imageNum], TRUE);
+		DrawTurnGraph(DrawPosition.x, DrawPosition.y, handle[currentAnim.first + imageNum], TRUE);
 	}
 	else {
 		//通常の描画
-		DrawGraph(position.x, position.y, handle[currentAnim.first + imageNum], TRUE);
+		DrawGraph(DrawPosition.x, DrawPosition.y, handle[currentAnim.first + imageNum], TRUE);
 	}
 	
 	DrawCollider();
@@ -118,12 +119,14 @@ void Mario::OnCollision(const CollideResult& result_) {
 
 //移動処理
 bool Mario::Move() {
+	static float timer = 0.0f;
 	bool isMove = false;
 	scrollValue = 0;
 
 	//座標移動処理
 	if (Input::GetInstance().GetInputDirectionButtonLeft()) {
-		position.x -= moveSpeed;
+		moveSpeed--;
+		
 		ChangeAnim(run);
 		isTurn = true;
 		isMove = true;
@@ -132,18 +135,45 @@ bool Mario::Move() {
 		ChangeAnim(run);
 		isTurn = false;
 		isMove = true;
-
-		if (position.x >= GameManager::SCREEN_WIDTH / 2) {
-			scrollValue++;
-		}
-		else {
-			position.x += moveSpeed;
-		}
+		moveSpeed++;
 	}
+
+	
+	if (abs(moveSpeed) > SPEED_LIMIT) {
+		moveSpeed = moveSpeed > 0 ? SPEED_LIMIT : -SPEED_LIMIT;
+	}
+
+	//画面中央または移動量がマイナスならば
+	if (position.x >= GameManager::SCREEN_WIDTH / 2 && moveSpeed > 0) {
+		scrollValue += moveSpeed;
+	}
+	else {
+		position.x += moveSpeed;
+	}
+	
 
 	if (CheckHitKey(KEY_INPUT_M)) {
 		ChangeAnim(run);
 		isMove = true;
+	}
+
+	//移動入力が無ければ
+	if (!isMove) {
+		if (moveSpeed != 0) {
+			//移動量を減少させる
+			if (moveSpeed > 0) {
+				moveSpeed-= 3;
+				if (moveSpeed < 0) {
+					moveSpeed = 0;
+				}
+			}
+			else if (moveSpeed < 0) {
+				moveSpeed+=3;
+				if (moveSpeed > 0) {
+					moveSpeed = 0;
+				}
+			}
+		}
 	}
 
 	return isMove;
@@ -170,7 +200,16 @@ bool Mario::Jump() {
 
 //しゃがみ処理
 bool Mario::Squat() {
-	//length.x /= 2;//しゃがみ状態では高さが1/2
+
+	if (Input::GetInstance().GetInputDirectionButtonDown() && currentState->GetTag() != "Normal") {
+		int width = 0;
+		int height = 0;
+		GetGraphSize(handle[0], &width, &height);
+		length = Vector2(width, height / 2);
+		DrawPosition.y -= length.y;
+		currentAnim = squat;
+		return true;
+	}
 
 	return false;
 }
@@ -212,8 +251,13 @@ void Mario::ChangeAnim(std::pair<int, int> anim_) {
 	}
 
 	//アニメーションを変更
+	if (currentAnim == squat) {
+		position.y -= 35;
+		GetGraphSize(handle[currentAnim.first], &length.x, &length.y);
+	}
 	currentAnim = anim_;
 	imageNum = 0;
+	
 }
 
 //アニメーション再生処理

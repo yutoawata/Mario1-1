@@ -16,11 +16,17 @@ void ObjectManager::Update() {
 	for (ObjectBase* const  object : objectList) {
 		//更新処理
 		object->Update();
-		//当たり判定処理
-		CollideObjects(*object, objectNum);
-		objectNum++;
+		if (object->IsActive()) {
+			//当たり判定処理
+			CollideObjects(*object, objectNum);
+			objectNum++;
+		}
 		//判定処理後の更新処理
 		object->LateUpdate();
+		//画面の左に行ったオブジェクトを削除
+		if (object->GetPosition().x < -object->GetLength().x) {
+			objectList.erase(objectList.begin() + objectNum);
+		}
 	}
 }
 

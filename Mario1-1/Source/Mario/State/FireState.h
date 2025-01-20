@@ -14,4 +14,7 @@ public:
 	void Update() override;
 	//攻撃アクション
 	void ShrowFireBall();
+
+private:
+	std::pair<int, int> squat = {8, 1};//しゃがみ状態のアニメーション情報
 };

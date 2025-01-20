@@ -4,6 +4,7 @@
 #include "..\BaseClass\ObjectBase.h"
 #include "..\Input\Input.h"
 #include "..\Mario\Mario.h"
+#include "../Mario/Ball/FireBall.h"
 
 class DebugObject : public ObjectBase {
 	//ƒƒ“ƒoŠÖ”
