@@ -9,6 +9,7 @@
 #include "../MapObject/Pype.h"
 #include "../MapObject/Pole.h"
 #include "../MapObject/Flag.h"
+#include "../MapObject/Fort.h"
 
 
 class Map

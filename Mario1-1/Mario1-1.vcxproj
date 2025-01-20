@@ -151,6 +151,7 @@
     <ClCompile Include="Source\ManagerClass\ImageManager.cpp" />
     <ClCompile Include="Source\ManagerClass\ObjectManager.cpp" />
     <ClCompile Include="Source\MapObject\Flag.cpp" />
+    <ClCompile Include="Source\MapObject\Fort.cpp" />
     <ClCompile Include="Source\MapObject\Pole.cpp" />
     <ClCompile Include="Source\MapObject\Pype.cpp" />
     <ClCompile Include="Source\Map\Map.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="Source\ManagerClass\ImageManager.h" />
     <ClInclude Include="Source\ManagerClass\ObjectManager.h" />
     <ClInclude Include="Source\MapObject\Flag.h" />
+    <ClInclude Include="Source\MapObject\Fort.h" />
     <ClInclude Include="Source\MapObject\Pole.h" />
     <ClInclude Include="Source\MapObject\Pype.h" />
     <ClInclude Include="Source\Map\Map.h" />

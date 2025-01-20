@@ -234,126 +234,176 @@ void Map::CreateMap()
 			case 27:
 			{
 				// ç‘_01
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE), 
+									  ImageManager::GetFortHandle()[0]);
 				break;
 			}
 			case 28:
 			{
 				// ç‘_02
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[1]);
 				break;
 			}
 			case 29:
 			{
 				// ç‘_03
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[2]);
 				break;
 			}
 			case 30:
 			{
 				// ç‘_04
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[3]);
 				break;
 			}
 			case 31:
 			{
 				// ç‘_05
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[4]);
 				break;
 			}
 			case 32:
 			{
 				// ç‘_06
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[5]);
 				break;
 			}
 			case 33:
 			{
 				// ç‘_07
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[6]);
 				break;
 			}
 			case 34:
 			{
 				// ç‘_08
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[7]);
 				break;
 			}
 			case 35:
 			{
 				// ç‘_09
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[8]);
 				break;
 			}
 			case 36:
 			{
 				// ç‘_10
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[9]);
 				break;
 			}
 			case 37:
 			{
 				// ç‘_11
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[10]);
 				break;
 			}
 			case 38:
 			{
 				// ç‘_12
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[11]);
 				break;
 			}
 			case 39:
 			{
 				// ç‘_13
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[12]);
 				break;
 			}
 			case 40:
 			{
 				// ç‘_14
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[13]);
 				break;
 			}
 			case 41:
 			{
 				// ç‘_15
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[14]);
 				break;
 			}
 			case 42:
 			{
 				// ç‘_16
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[15]);
 				break;
 			}
 			case 43:
 			{
 				// ç‘_17
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[16]);
 				break;
 			}
 			case 44:
 			{
 				// ç‘_18
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[17]);
 				break;
 			}
 			case 45:
 			{
 				// ç‘_19
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[18]);
 				break;
 			}
 			case 46:
 			{
 				// ç‘_20
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[19]);
 				break;
 			}
 			case 47:
 			{
 				// ç‘_21
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[20]);
 				break;
 			}
 			case 48:
 			{
 				// ç‘_22
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[21]);
 				break;
 			}
 			case 49:
 			{
 				// ç‘_23
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[22]);
 				break;
 			}
 			case 50:
 			{
 				// ç‘_24
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[23]);
 				break;
 			}
 			case 51:
 			{
 				// ç‘_25
+				Fort* fort = new Fort(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+									  ImageManager::GetFortHandle()[24]);
 				break;
 			}
 			default:
