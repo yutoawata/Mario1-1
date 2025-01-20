@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "../Math/Vector2.h"
+#include "MoveValueManager.h"
 
 class DebugBlockMove
 {

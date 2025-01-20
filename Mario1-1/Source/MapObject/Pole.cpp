@@ -12,8 +12,8 @@ Pole::~Pole()
 
 void Pole::Update()
 {
-	debugBlockMove->Update();
-	position += debugBlockMove->GetMove_Val();
+	//position += Mario::GetScrollValue();
+	position += MoveValueManager::GetMoveValue();
 }
 
 void Pole::Draw()

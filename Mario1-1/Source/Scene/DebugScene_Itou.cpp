@@ -15,6 +15,7 @@ DebugScene_Itou::~DebugScene_Itou()
 {
 	ImageManager::DeleteImages();
 	delete map;
+	delete debugBlockMove;
 }
 
 //更新処理
@@ -23,6 +24,8 @@ SceneBase* DebugScene_Itou::Update() {
 
 	//ゲーム内のオブジェクトの更新処理
 	ObjectManager::GetInstance()->Update();
+
+	debugBlockMove->Update();
 
 	return this;
 }

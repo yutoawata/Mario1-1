@@ -1,17 +1,18 @@
 #pragma once
-#include"../BaseClass/ObjectBase.h"
+#include "../BaseClass/ObjectBase.h"
 #include "../Move_D/MoveValueManager.h"
 #include "../Mario/Mario.h"
 
-class Pole: public ObjectBase
+class Fort : ObjectBase
 {
 public:
-	Pole(Vector2 position_, int image_handle);
-	~Pole();
+	Fort(Vector2 position_, int image_handle);
+	~Fort();
 
 	void Update() override;
 	void Draw() override;
 
 private:
 	int imageHandle;
+
 };

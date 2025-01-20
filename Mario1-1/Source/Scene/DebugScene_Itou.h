@@ -1,5 +1,6 @@
 #pragma once
 #include "..\BaseClass\SceneBase.h"
+#include "../Move_D/DebugBlockMove.h"
 #include "..\Map\Map.h"
 
 class DebugScene_Itou : public SceneBase {
@@ -14,5 +15,6 @@ public:
 
 private:
 
+	DebugBlockMove* debugBlockMove = new DebugBlockMove();
 	Map* map = new Map();
 };

@@ -12,12 +12,12 @@ BlockBase::~BlockBase()
 
 void BlockBase::Update()
 {
-	debugMoveBlock->Update();
 	Move();
 }
 
 void BlockBase::Move()
 {
-	move_val = debugMoveBlock->GetMove_Val();
+	// move_val = Mario::GetScrollValue();
+	move_val = MoveValueManager::GetMoveValue();
 	position += move_val;
 }
