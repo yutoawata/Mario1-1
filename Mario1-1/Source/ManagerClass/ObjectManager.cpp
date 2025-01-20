@@ -1,4 +1,5 @@
 #include "ObjectManager.h"
+#include "../GameMain/GameManagerh.h"
 
 ObjectManager* ObjectManager::instance = new ObjectManager();
 
@@ -16,16 +17,17 @@ void ObjectManager::Update() {
 	for (ObjectBase* const  object : objectList) {
 		//更新処理
 		object->Update();
-		if (object->IsActive()) {
+		if (object->IsActive() && object->GetPosition().x > GameManager::SCREEN_WIDTH) {
 			//当たり判定処理
 			CollideObjects(*object, objectNum);
-			objectNum++;
 		}
 		//判定処理後の更新処理
 		object->LateUpdate();
+		objectNum++;
 		//画面の左に行ったオブジェクトを削除
 		if (object->GetPosition().x < -object->GetLength().x) {
 			objectList.erase(objectList.begin() + objectNum);
+			delete object;
 		}
 	}
 }
@@ -44,11 +46,13 @@ void ObjectManager::CollideObjects(ObjectBase& object_, int object_num) {
 	bool isCollide = false;//衝突フラグ
 	//制作中
 	for (int i = object_num + 1; i < objectList.size(); ++i) {
-		if (object_.Collide(*objectList[i])) {
-			object_.OnCollision(CreateResult(object_, *objectList[i]));
-		}
-		if (objectList[i]->Collide(object_)) {
-			objectList[i]->OnCollision(CreateResult(*objectList[i], object_));
+		if (objectList[i]->IsCollide()) {
+			if (object_.Collide(*objectList[i])) {
+				object_.OnCollision(CreateResult(object_, *objectList[i]));
+			}
+			if (objectList[i]->Collide(object_)) {
+				objectList[i]->OnCollision(CreateResult(*objectList[i], object_));
+			}
 		}
 	}
 }

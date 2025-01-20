@@ -5,7 +5,7 @@
 
 //コンストラクタ
 NormalState::NormalState(Mario& holder_)
-	: StateBase(holder_, holder_.normalImageHandle, "Normal") {}
+	: StateBase(holder_, ImageManager::GetNormalMarioHandle(), "Normal") {}
 
 //デストラクタ
 NormalState::~NormalState() {}
