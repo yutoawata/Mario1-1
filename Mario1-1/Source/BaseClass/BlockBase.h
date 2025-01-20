@@ -1,6 +1,7 @@
 #pragma once
 #include "ObjectBase.h"
 #include "../Move_D/DebugBlockMove.h"
+#include "../Mario/Mario.h"
 
 class BlockBase : public ObjectBase
 {

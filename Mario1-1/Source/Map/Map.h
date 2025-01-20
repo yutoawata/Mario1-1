@@ -8,6 +8,7 @@
 #include "../Block/QuestionBlock.h"
 #include "../MapObject/Pype.h"
 #include "../MapObject/Pole.h"
+#include "../MapObject/Flag.h"
 
 
 class Map
