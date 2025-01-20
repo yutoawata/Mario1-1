@@ -132,62 +132,96 @@ void Map::CreateMap()
 			}
 			case 14:
 			{
-				// ìyä«(è„)_01
+				// ìyä«(ï\)_å˚_ç∂
+				Pype* fPypeMouthLeft = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+												 ImageManager::GetFPypeHandle()[0],
+												 "fPypeMouth");
 				break;
 			}
 			case 15:
 			{
-				// ìyä«(è„)_02
+				// ìyä«(ï\)_å˚_âE
+				Pype* fPypeMouthRight = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+												  ImageManager::GetFPypeHandle()[1],
+												  "fPypeMouth");
 				break;
 			}
 			case 16:
 			{
-				// ìyä«(è„)_03
+				// ìyä«(ï\)_éÒ_ç∂
+				Pype* fPypeNeckLeft = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+												ImageManager::GetFPypeHandle()[2],
+												"fPypeNeck");
 				break;
 			}
 			case 17:
 			{
-				// ìyä«(è„)_04
+				// ìyä«(ï\)_éÒ_âE
+				Pype* fPypeNeckRight = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+												 ImageManager::GetFPypeHandle()[3],
+												 "fPypeNeck");
 				break;
 			}
 			case 18:
 			{
-				// ìyä«(ç∂)_01
+				// ìyä«(ó†)_å˚_è„
+				Pype* bPypeMouthTop = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+											   ImageManager::GetbPypeHandle()[0],
+											   "bPypeMouth");
 				break;
 			}
 			case 19:
 			{
-				// ìyä«(ç∂)_02
+				// ìyä«(ó†)_éÒ_è„
+				Pype* bPypeNeckTop = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+											  ImageManager::GetbPypeHandle()[1],
+											  "bPypeNeck");
 				break;
 			}
 			case 20:
 			{
-				// ìyä«(ç∂)_03
+				// ìyä«(ó†)_ê⁄ë±ïî_è„
+				Pype* bPypejointTop = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+											   ImageManager::GetbPypeHandle()[2],
+											   "bPypejoint");
 				break;
 			}
 			case 21:
 			{
-				// ìyä«(ç∂)_04
+				// ìyä«(ó†)_å˚_â∫
+				Pype* bPypeMouthBottom = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+											   ImageManager::GetbPypeHandle()[3],
+											   "bPypeMouth");
 				break;
 			}
 			case 22:
 			{
-				// ìyä«(ê⁄ë±ïî)_01
+				// ìyä«(ó†)_éÒ_â∫
+				Pype* bPypeNeckBottom = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+											     ImageManager::GetbPypeHandle()[4],
+											     "bPypeNeck");
 				break;
 			}
 			case 23:
 			{
-				// ìyä«(ê⁄ë±ïî)_02
+				// ìyä«(ó†)_ê⁄ë±ïî_â∫
+				Pype* bPypejointBottom = new Pype(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+											      ImageManager::GetbPypeHandle()[5],
+											      "bPypejoint");
 				break;
 			}
 			case 24:
 			{
-				// ÉSÅ[ÉãÉ|Å[Éã_01
+				// ÉSÅ[ÉãÉ|Å[Éã_ì™
+				Pole* poleHead = new Pole(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+												  ImageManager::GetPolehandle()[0]);
 				break;
 			}
 			case 25:
 			{
-				// ÉSÅ[ÉãÉ|Å[Éã_02
+				// ÉSÅ[ÉãÉ|Å[Éã_éÒ
+				Pole* poleNeck = new Pole(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+										  ImageManager::GetPolehandle()[1]);
 				break;
 			}
 			case 26:
