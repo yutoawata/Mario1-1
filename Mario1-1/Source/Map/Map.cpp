@@ -213,11 +213,15 @@ void Map::CreateMap()
 			case 24:
 			{
 				// ゴールポール_頭
+				Pole* poleHead = new Pole(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+												  ImageManager::GetPolehandle()[0]);
 				break;
 			}
 			case 25:
 			{
 				// ゴールポール_首
+				Pole* poleNeck = new Pole(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+										  ImageManager::GetPolehandle()[1]);
 				break;
 			}
 			case 26:

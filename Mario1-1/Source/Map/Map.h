@@ -7,6 +7,7 @@
 #include "../Block/BrickBlock.h"
 #include "../Block/QuestionBlock.h"
 #include "../MapObject/Pype.h"
+#include "../MapObject/Pole.h"
 
 
 class Map
