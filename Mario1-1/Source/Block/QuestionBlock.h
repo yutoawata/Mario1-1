@@ -16,7 +16,7 @@ private:
 	// メンバ定数
 
 	static const int HANDLE_VALUE = 4; // 画像の枚数
-	static const int LOOP_TOTAL_TIME = 1; // ループにかかる時間
+	static const int LOOP_TOTAL_TIME = 2; // ループにかかる時間
 	static const int LOOP_PATERN_VALUE = 5; // 1回のループで変更する数
 
 	// メンバ変数
