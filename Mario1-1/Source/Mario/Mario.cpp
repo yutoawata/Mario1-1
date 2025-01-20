@@ -13,7 +13,7 @@ Vector2 Mario::scrollValue = Vector2::ZERO;
 
 //コンストラクタ
 Mario::Mario(Vector2 position_)
-	: ObjectBase(position_, 1, "Mario")
+	: ObjectBase(position_, -1, "Mario")
 	, moveSpeed(0), currentState(new NormalState(*this)) {
 	currentState->GetImageHandle(handle);
 	GetGraphSize(handle[0], &length.x, &length.y);
@@ -31,7 +31,8 @@ Mario::~Mario() {
 void Mario::Update() {
 	bool isAction = false;
 	isDamage = false;
-	position.y += 5;
+	isGround = false;
+	DrawPosition = position;
 	
 	if (Move()) {
 		isAction = true;
@@ -39,8 +40,6 @@ void Mario::Update() {
 	if (Jump()) {
 		isAction = true;
 	}
-
-	DrawPosition = position;
 
 	if (Squat()) {
 		isAction = true;
@@ -69,14 +68,16 @@ void Mario::LateUpdate() {
 	currentAnim = currentState->GetCurrentAnim();
 	currentState->GetImageHandle(handle);
 
+	if (!isGround) {
+		position.y += 5;
+	}
+
 	//アニメーションを再生
 	PlayAnimation();
 }
 
 //描画処理
 void Mario::Draw() {
-
-	DrawFormatString(10, 10, GetColor(0, 0, 0), "%d, %d", DrawPosition.x, DrawPosition.y);
 
 	if (isTurn) {
 		//左右反転描画
@@ -183,11 +184,14 @@ bool Mario::Jump() {
 		isJump = true;
 	}
 
-	if (isJump) {
+	if (isJump && jumpPower != 0) {
 		ChangeAnim(jump);
 		position.y += jumpPower;
 		jumpPower++;
 		return true;
+	}
+	else if (isJump && jumpPower >= 0) {
+		position.y += 4;
 	}
 
 	return false;
@@ -195,7 +199,6 @@ bool Mario::Jump() {
 
 //しゃがみ処理
 bool Mario::Squat() {
-	DrawPosition = position;
 
 	if (Input::GetInstance().GetInputDirectionButtonDown() && currentState->GetTag() != "Normal") {
 		int width = 0;

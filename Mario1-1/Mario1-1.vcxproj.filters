@@ -91,6 +91,21 @@
     <ClCompile Include="Source\Mario\Ball\FireBall.cpp">
       <Filter>Mario\Ball</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MapObject\Flag.cpp">
+      <Filter>MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapObject\Fort.cpp">
+      <Filter>MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapObject\Pole.cpp">
+      <Filter>MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapObject\Pype.cpp">
+      <Filter>MapObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Move_D\MoveValueManager.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BaseClass\BlockBase.h">
@@ -182,6 +197,21 @@
     </ClInclude>
     <ClInclude Include="Source\Mario\Ball\FireBall.h">
       <Filter>Mario\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapObject\Flag.h">
+      <Filter>MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapObject\Fort.h">
+      <Filter>MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapObject\Pole.h">
+      <Filter>MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapObject\Pype.h">
+      <Filter>MapObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Move_D\MoveValueManager.h">
+      <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

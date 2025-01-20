@@ -5,8 +5,6 @@
 //コンストラクタ
 DebugObject::DebugObject(Vector2 position_, std::string tag_, int width_, int height_)
 	: ObjectBase(position_, tag_, width_, height_) {
-	ImageManager::LoadImages();
-	Mario* mario = new Mario(Vector2(0, 0));
 }
 //デストラクタ
 DebugObject::~DebugObject() { ImageManager::DeleteImages(); }
@@ -23,6 +21,8 @@ DebugScene_Awata::DebugScene_Awata()
 	DebugObject* object02 = new DebugObject(Vector2(200, 400), "FireFlower", 30, 30);
 	Input::CreateInstance();
 	Input::GetInstance().SetUpJoypadInput(DX_PADTYPE_DUAL_SENSE);
+	ImageManager::LoadImages();
+	Mario* mario = new Mario(Vector2(0, 0));
 }
 
 void DebugObject::OnCollision(const CollideResult& other_) {
@@ -33,6 +33,7 @@ void DebugObject::OnCollision(const CollideResult& other_) {
 //デストラクタ
 DebugScene_Awata::~DebugScene_Awata() {
 	Input::DeleteInsatance();
+	ImageManager::DeleteImages();
 }
 
 //更新処理

@@ -28,7 +28,7 @@ GameManager::~GameManager(){
 
 //ゲームループ処理
 void GameManager::ExcuteGameLoop() {
-
+	float timer = 0.0f;
 	//ゲームループ
 	while (!ProcessMessage() && isInit == FALSE)
 	{
@@ -39,6 +39,7 @@ void GameManager::ExcuteGameLoop() {
 		//描画領域をリセット
 		ClearDrawScreen();
 
+		timer += FPSManager::GetInstance()->GetDeltaTime();
 		currentScene = currentScene->Update();
 		currentScene->Draw();
 		FPSManager::GetInstance()->Update();
