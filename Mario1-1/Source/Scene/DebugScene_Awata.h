@@ -35,6 +35,5 @@ public:
 
 	//ƒƒ“ƒo•Ï”
 private:
-	Mario* mario = new Mario(Vector2(0, 0));
 	float timer = 0.0f;
 };

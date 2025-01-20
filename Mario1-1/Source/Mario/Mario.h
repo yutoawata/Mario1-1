@@ -53,7 +53,7 @@ public:
 	static int FireImageHandle[9];
 
 	static const int SPEED_LIMIT = 5;
-	static const int JUMP_POWER = 20;	//ジャンプする力
+	static const int JUMP_POWER = 40;	//ジャンプする力
 	static Vector2 scrollValue;			//画面スクロールの移動量
 private:
 	int handle[9];						//画像素材のハンドルの配列
@@ -75,4 +75,5 @@ private:
 	bool isTurn = false;				//画像の左右反転フラグ
 	bool isJump = false;				//ジャンプフラグ
 	bool isDamage = false;				//ダメージフラグ
+	bool isGround = false;				//接地フラグ
 };

@@ -15,11 +15,8 @@ Vector2 Mario::scrollValue = Vector2::ZERO;
 Mario::Mario(Vector2 position_)
 	: ObjectBase(position_, 1, "Mario")
 	, moveSpeed(0), currentState(new NormalState(*this)) {
-	length = Vector2(32, 32);
-	LoadDivGraph("././Resource/Images/NormalMario.png", 9, 3, 3, 32, 32, normalImageHandle);
-	LoadDivGraph("././Resource/Images/SuperMario.png", 9, 3, 3, 32, 64, superImageHandle);
-	LoadDivGraph("././Resource/Images/FireMario.png", 9, 3, 3, 32, 64, FireImageHandle);
 	currentState->GetImageHandle(handle);
+	GetGraphSize(handle[0], &length.x, &length.y);
 	ChangeAnim(idle);
 }
 
@@ -34,9 +31,20 @@ Mario::~Mario() {
 void Mario::Update() {
 	bool isAction = false;
 	isDamage = false;
+	position.y += 5;
+	
+	if (Move()) {
+		isAction = true;
+	}
+	if (Jump()) {
+		isAction = true;
+	}
+
 	DrawPosition = position;
 
-	isAction = Move() || Jump() || Squat();
+	if (Squat()) {
+		isAction = true;
+	}
 
 	if (!isAction) {
 		ChangeAnim(idle);
@@ -51,7 +59,6 @@ void Mario::Update() {
 	else if (CheckHitKey(KEY_INPUT_3)) {
 		ChangeState(StateType::FIRE);
 	}
-	position.y += 5;
 }
 
 //判定処理後の更新処理
@@ -68,6 +75,9 @@ void Mario::LateUpdate() {
 
 //描画処理
 void Mario::Draw() {
+
+	DrawFormatString(10, 10, GetColor(0, 0, 0), "%d, %d", DrawPosition.x, DrawPosition.y);
+
 	if (isTurn) {
 		//左右反転描画
 		DrawTurnGraph(DrawPosition.x, DrawPosition.y, handle[currentAnim.first + imageNum], TRUE);
@@ -78,9 +88,6 @@ void Mario::Draw() {
 	}
 	
 	DrawCollider();
-	DrawFormatString(10, 100, GetColor(255, 0, 0), "%d", length.x);
-	DrawFormatString(10, 130, GetColor(255, 0, 0), "%d", length.y);
-	//DrawBox(position.x, position.y, position.x + length.x, position.y + length.y, GetColor(255, 0, 255),FALSE);
 }
 
 //衝突時の処理
@@ -89,6 +96,7 @@ void Mario::OnCollision(const CollideResult& result_) {
 	//ブロックの上に立っていれば
 	if (result_.GetCollideObject().GetTag() == "Block" && result_.IsBottomCollide()) {
 		isJump = false;
+		isGround = true;
 	}
 	//敵オブジェクトに衝突すれば
 	else if (result_.GetCollideObject().GetTag() == "Enemy" 
@@ -100,19 +108,6 @@ void Mario::OnCollision(const CollideResult& result_) {
 	}
 	else if (result_.GetCollideObject().GetTag() == "FireFlower") {
 		ChangeState(StateType::FIRE);
-	}
-
-	if (result_.IsUpCollide()) {
-		DrawString(30, 100, "Up", GetColor(255, 255, 255));
-	}
-	else if (result_.IsBottomCollide()) {
-		DrawString(30, 100, "Bottom", GetColor(255, 255, 255));
-	}
-	else if (result_.IsLeftCollide()) {
-		DrawString(30, 100, "Left", GetColor(255, 255, 255));
-	}
-	else if (result_.IsRightCollide()) {
-		DrawString(30, 100, "Right", GetColor(255, 255, 255));
 	}
 
 }
@@ -200,6 +195,7 @@ bool Mario::Jump() {
 
 //しゃがみ処理
 bool Mario::Squat() {
+	DrawPosition = position;
 
 	if (Input::GetInstance().GetInputDirectionButtonDown() && currentState->GetTag() != "Normal") {
 		int width = 0;
@@ -273,7 +269,4 @@ void Mario::PlayAnimation() {
 		}
 		timer = 0.0f;
 	}
-
-	DrawFormatString(10, 180, GetColor(255, 255, 255), "%d", currentAnim.second);
-	DrawFormatString(10, 200, GetColor(255, 255, 255), "%d", imageNum);
 }

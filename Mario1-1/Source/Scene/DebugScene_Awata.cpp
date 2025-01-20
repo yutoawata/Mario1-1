@@ -6,6 +6,7 @@
 DebugObject::DebugObject(Vector2 position_, std::string tag_, int width_, int height_)
 	: ObjectBase(position_, tag_, width_, height_) {
 	ImageManager::LoadImages();
+	Mario* mario = new Mario(Vector2(0, 0));
 }
 //デストラクタ
 DebugObject::~DebugObject() { ImageManager::DeleteImages(); }

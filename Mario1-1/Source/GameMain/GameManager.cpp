@@ -17,7 +17,7 @@ GameManager::GameManager() {
 	SetMouseDispFlag(FALSE);
 	SetDrawScreen(DX_SCREEN_BACK);
 
-	SetBackgroundColor(173, 189, 236);
+	SetBackgroundColor(65, 105, 225);
 }
 
 //デストラクタ

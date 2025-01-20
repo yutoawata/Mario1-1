@@ -15,29 +15,39 @@ ObjectManager::~ObjectManager() {
 void ObjectManager::Update() {
 	int objectNum = 0;
 	for (ObjectBase* const  object : objectList) {
-		//更新処理
-		object->Update();
-		if (object->IsActive() && object->GetPosition().x > GameManager::SCREEN_WIDTH) {
-			//当たり判定処理
-			CollideObjects(*object, objectNum);
+
+		if (object != nullptr) {
+			//更新処理
+			object->Update();
+			if (object->IsActive() && object->GetPosition().x < GameManager::SCREEN_WIDTH) {
+				//当たり判定処理
+				CollideObjects(*object, objectNum);
+			}
+			//判定処理後の更新処理
+			object->LateUpdate();
+
+			//画面の左に行ったオブジェクトを削除
+			if (object->GetPosition().x < -object->GetLength().x * 2) {
+				delete object;
+				objectList[objectNum] = nullptr;
+				/*objectList.erase(objectList.begin() + (objectNum - 1));
+				delete object;*/
+
+			}
 		}
-		//判定処理後の更新処理
-		object->LateUpdate();
+		
 		objectNum++;
-		//画面の左に行ったオブジェクトを削除
-		if (object->GetPosition().x < -object->GetLength().x) {
-			objectList.erase(objectList.begin() + objectNum);
-			delete object;
-		}
 	}
 }
 
 //描画処理
 void ObjectManager::Draw() {
+	int objectNum = 0;
 	for (ObjectBase* const object : objectList) {
-		if (object->IsVisible()) {
+		if (object != nullptr && object->IsVisible()) {
 			object->Draw();
 		}
+		objectNum++;
 	}
 }
 
@@ -46,7 +56,7 @@ void ObjectManager::CollideObjects(ObjectBase& object_, int object_num) {
 	bool isCollide = false;//衝突フラグ
 	//制作中
 	for (int i = object_num + 1; i < objectList.size(); ++i) {
-		if (objectList[i]->IsCollide()) {
+		if (objectList[i] != nullptr && objectList[i]->IsCollide()) {
 			if (object_.Collide(*objectList[i])) {
 				object_.OnCollision(CreateResult(object_, *objectList[i]));
 			}
