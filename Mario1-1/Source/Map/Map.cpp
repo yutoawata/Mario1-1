@@ -227,6 +227,8 @@ void Map::CreateMap()
 			case 26:
 			{
 				// Šø
+				Flag* goalFlag = new Flag(Vector2(x * BLOCK_SIZE, y * BLOCK_SIZE),
+										  ImageManager::GetFlagHandle());
 				break;
 			}
 			case 27:
