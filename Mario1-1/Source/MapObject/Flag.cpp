@@ -18,5 +18,5 @@ void Flag::Update()
 
 void Flag::Draw()
 {
-	DrawGraph(position.x + 11, position.y + 10, imageHandle,TRUE);
+	DrawGraph(position.x + 16, position.y + 13, imageHandle,TRUE);
 }
