@@ -147,13 +147,13 @@ void ImageManager::LoadImages()
 		printfDx("ERROE:normalMarioHandle");
 		return;
 	}
-	LoadDivGraph("././Resource/Images/SuperMario.png", 9, 3, 3, 32, 32, superMarioHandle);
+	LoadDivGraph("././Resource/Images/SuperMario.png", 9, 3, 3, 32, 64, superMarioHandle);
 	if (superMarioHandle[0] == -1)
 	{
 		printfDx("ERROE:superMarioHandle");
 		return;
 	}
-	LoadDivGraph("././Resource/Images/FireMario.png", 9, 3, 3, 32, 32, fireMarioHandle);
+	LoadDivGraph("././Resource/Images/FireMario.png", 9, 3, 3, 32, 64, fireMarioHandle);
 	if (fireMarioHandle[0] == -1)
 	{
 		printfDx("ERROE:fireMarioHandle");
